@@ -12,7 +12,7 @@ public class ScenePackage : ScriptableObject
     /// The name of the scene.
     /// </summary>
     [field: SerializeField]
-    public string Name { get; private set; }
+    public SceneName Name { get; private set; }
 
     /// <summary>
     /// Holds the scenes that belong to each other.
