@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 1221855706531112657}
   - component: {fileID: 434341843082623331}
   - component: {fileID: 6016347437622451214}
+  - component: {fileID: 7358567362864482220}
   m_Layer: 5
   m_Name: Image (1)
   m_TagString: Untagged
@@ -175,6 +176,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7358567362864482220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860192472911930613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dfd75ae4088656488353b3a71f0b619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4991931564720695274
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,6 +199,7 @@ GameObject:
   - component: {fileID: 4409463323906996880}
   - component: {fileID: 3285378891731231516}
   - component: {fileID: 3695231438847879145}
+  - component: {fileID: 5318508694169762393}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -250,6 +264,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5318508694169762393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4991931564720695274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dfd75ae4088656488353b3a71f0b619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8033184367879608842
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,7 +285,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4819459572054249576}
-  - component: {fileID: 1410658504115442588}
+  - component: {fileID: 2075410401565605502}
   m_Layer: 5
   m_Name: SoundVisualizer
   m_TagString: Untagged
@@ -288,7 +314,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1410658504115442588
+--- !u!114 &2075410401565605502
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -297,6 +323,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8033184367879608842}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dfd75ae4088656488353b3a71f0b619, type: 3}
+  m_Script: {fileID: 11500000, guid: fbe5d3faacc033049ada19966ddfaaa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minHeight: 15
+  maxHeight: 425
+  updateSentivity: 10
+  visualizerColor: {r: 0.1147739, g: 0.19839393, b: 0.9811321, a: 1}
+  audioClip: {fileID: 8300000, guid: 57ae00c5c7ac8a7418a20065476915c0, type: 3}
+  loop: 1
+  visualizerSimples: 64
