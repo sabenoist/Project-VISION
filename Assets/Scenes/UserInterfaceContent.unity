@@ -373,7 +373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 883395692801082902, guid: 73fceca82a6a75846a7b6d82187f8a28, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -266
+      value: -242.9
       objectReference: {fileID: 0}
     - target: {fileID: 883395692801082902, guid: 73fceca82a6a75846a7b6d82187f8a28, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -402,7 +402,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1683013208227335471, guid: 85c85001891dcc449acefd9adeaab2ee, type: 3}
       propertyPath: m_Name
-      value: testing 3D
+      value: 3DVisualizer
       objectReference: {fileID: 0}
     - target: {fileID: 2883507216839350577, guid: 85c85001891dcc449acefd9adeaab2ee, type: 3}
       propertyPath: m_RootOrder
