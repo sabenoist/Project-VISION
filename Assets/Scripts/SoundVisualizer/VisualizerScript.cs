@@ -7,7 +7,7 @@ public class VisualizerScript : MonoBehaviour {
 	public float minHeight = 15.0f;
 	public float maxHeight = 425.0f;
 	public float updateSentivity = 10.0f;
-	public Color visualizerColor = Color.gray;
+	//public Color visualizerColor = Color.gray;
 	[Space (15)]
 	public AudioClip audioClip;
 	public bool loop = true;
@@ -35,12 +35,12 @@ public class VisualizerScript : MonoBehaviour {
 		float[] spectrumData = audioSource.GetSpectrumData (visualizerSimples, 0, FFTWindow.Rectangular);
 
 		for (int i = 0; i < visualizerObjects.Length; i++) {
-			Vector2 newSize = visualizerObjects [i].GetComponent<RectTransform> ().rect.size;
+			Vector3 newSize = visualizerObjects [i].GetComponent<RectTransform> ().rect.size;
 
 			newSize.y = Mathf.Clamp (Mathf.Lerp (newSize.y, minHeight + (spectrumData [i] * (maxHeight - minHeight) * 5.0f), updateSentivity * 0.5f), minHeight, maxHeight);
 			visualizerObjects [i].GetComponent<RectTransform> ().sizeDelta = newSize;
 
-			visualizerObjects [i].GetComponent<Image> ().color = visualizerColor;
+			//visualizerObjects [i].GetComponent<Image> ().color = visualizerColor;
 		}
 	}
 }

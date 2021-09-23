@@ -27,7 +27,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 883395692801082898}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 404}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4819459572054249576}
@@ -329,7 +329,6 @@ MonoBehaviour:
   minHeight: 15
   maxHeight: 425
   updateSentivity: 10
-  visualizerColor: {r: 0.1147739, g: 0.19839393, b: 0.9811321, a: 1}
   audioClip: {fileID: 8300000, guid: 57ae00c5c7ac8a7418a20065476915c0, type: 3}
   loop: 1
   visualizerSimples: 64
