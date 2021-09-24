@@ -128,7 +128,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3841637021202715667
 Transform:
   m_ObjectHideFlags: 0
@@ -237,7 +237,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4116581917963028681
 Transform:
   m_ObjectHideFlags: 0
@@ -346,7 +346,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8338961399263243855
 Transform:
   m_ObjectHideFlags: 0
@@ -445,7 +445,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5228444143043213986}
-  - component: {fileID: 5324614195291661462}
+  - component: {fileID: 216142744539458112}
   m_Layer: 0
   m_Name: 3DVisualizer
   m_TagString: Untagged
@@ -471,7 +471,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5324614195291661462
+--- !u!114 &216142744539458112
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -483,9 +483,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 314c38114dac15d478b5072ffa2451ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minHeight: 5
-  maxHeight: 15
-  updateSentivity: 10
-  audioClip: {fileID: 8300000, guid: 046adb011622dc345b4a6d6fc5d03c72, type: 3}
-  loop: 1
-  visualizerSimples: 64
+  spectrumData: 15
+  visualizerObject: {fileID: 926501425717078169}
