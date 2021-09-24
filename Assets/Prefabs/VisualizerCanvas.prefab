@@ -82,7 +82,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &883395692801082899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,6 +508,6 @@ MonoBehaviour:
   maxHeight: 425
   updateSentivity: 10
   visualizerColor: {r: 0, g: 0.15554105, b: 0.9716981, a: 1}
-  audioClip: {fileID: 8300000, guid: 57ae00c5c7ac8a7418a20065476915c0, type: 3}
+  audioClip: {fileID: 8300000, guid: 046adb011622dc345b4a6d6fc5d03c72, type: 3}
   loop: 1
   visualizerSimples: 64

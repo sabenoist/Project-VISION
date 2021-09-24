@@ -486,6 +486,6 @@ MonoBehaviour:
   minHeight: 5
   maxHeight: 15
   updateSentivity: 10
-  audioClip: {fileID: 8300000, guid: 57ae00c5c7ac8a7418a20065476915c0, type: 3}
+  audioClip: {fileID: 8300000, guid: 046adb011622dc345b4a6d6fc5d03c72, type: 3}
   loop: 1
   visualizerSimples: 64
