@@ -51,3 +51,8 @@ MonoBehaviour:
   autoConnect: 1
   mqttUserName: 
   mqttPassword: 
+  topics:
+  - mic0
+  - mic1
+  - mic2
+  - mic3

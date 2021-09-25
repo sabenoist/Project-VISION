@@ -49,4 +49,21 @@ public class Visualizer3D : MonoBehaviour
 			bar.GetComponent<Transform>().localScale = newSize;
 		}
     }
+
+	/// <summary>
+	/// Attaches an event listener to <see cref="MQTT_Client"/> for when new data arrives from the MQTT broker. 
+	/// </summary>
+    public void OnEnable() 
+	{
+		MQTT_Client.NetworkManager.AddReceivedDataListener(SetBarHeight);
+    }
+
+	/// <summary>
+	/// Removes an event listener from <see cref="MQTT_Client"/> for when new data arrives from the MQTT broker.
+	/// </summary>
+	public void OnDisable() {
+		MQTT_Client.NetworkManager.RemoveReceivedDataListener(SetBarHeight);
+    }
+
+
 }

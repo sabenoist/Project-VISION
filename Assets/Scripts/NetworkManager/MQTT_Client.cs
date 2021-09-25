@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using uPLibrary.Networking.M2Mqtt.Messages;
 using M2MqttUnity;
+using System;
 
 /// <summary>
 /// Subclass of the library <see cref="M2MqttUnityClient"/> to handle our connection to the MQTT broker.
@@ -8,9 +9,37 @@ using M2MqttUnity;
 public class MQTT_Client : M2MqttUnityClient
 {
     /// <summary>
+    /// Array of topics to subscribe to.
+    /// </summary>
+    [Header("Topics to subscribe to")]
+    [SerializeField]
+    private string[] topics;
+
+    /// <summary>
+    /// Event to trigger when data has been received.
+    /// </summary>
+    private event Action<Microphone, float> ReceivedData;
+
+    /// <summary>
     /// Static reference to this object for other classes to call upon.
     /// </summary>
     public static MQTT_Client NetworkManager { get; private set; }
+
+    /// <summary>
+    /// Adds a listener for when <see cref="ReceivedData"/> gets invoked.
+    /// </summary>
+    /// <param name="listener">The listener to be added.</param>
+    public void AddReceivedDataListener(Action<Microphone, float> listener) {
+        ReceivedData += listener;
+    }
+
+    /// <summary>
+    /// Removes a listener for when <see cref="ReceivedData"/> gets invoked.
+    /// </summary>
+    /// <param name="listener">The listener to be added.</param>
+    public void RemoveReceivedDataListener(Action<Microphone, float> listener) {
+        ReceivedData -= listener;
+    }
 
     /// <summary>
     /// To execute while connecting.
@@ -33,10 +62,7 @@ public class MQTT_Client : M2MqttUnityClient
     /// </summary>
     protected override void SubscribeTopics()
     {
-        client.Subscribe(new string[] { "mic0" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
-        client.Subscribe(new string[] { "mic1" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
-        client.Subscribe(new string[] { "mic2" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
-        client.Subscribe(new string[] { "mic3" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+        client.Subscribe(new string[] { "mic0", "mic1", "mic2", "mic3" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
     }
 
     /// <summary>
@@ -44,10 +70,7 @@ public class MQTT_Client : M2MqttUnityClient
     /// </summary>
     protected override void UnsubscribeTopics()
     {
-        client.Unsubscribe(new string[] { "mic0" });
-        client.Unsubscribe(new string[] { "mic1" });
-        client.Unsubscribe(new string[] { "mic2" });
-        client.Unsubscribe(new string[] { "mic3" });
+        client.Unsubscribe(new string[] { "mic0", "mic1", "mic2", "mic3" });
     }
 
     /// <summary>
@@ -67,7 +90,9 @@ public class MQTT_Client : M2MqttUnityClient
     protected override void DecodeMessage(string topic, byte[] message)
     {
         string msg = System.Text.Encoding.UTF8.GetString(message);
-        Debug.Log("Topic: " + topic + " ~ Received: " + msg);
+        //Debug.Log("Topic: " + topic + " ~ Received: " + msg);
+
+        ReceivedData?.Invoke((Microphone)int.Parse(topic), float.Parse(msg));
     }
 
     /// <summary>
