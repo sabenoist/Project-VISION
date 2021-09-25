@@ -16,6 +16,13 @@ public class MQTT_Client : M2MqttUnityClient
     private string[] topics;
 
     /// <summary>
+    /// Array of topics to subscribe to.
+    /// </summary>
+    [Header("Debug options")]
+    [SerializeField]
+    private bool verboseLogging = false;
+
+    /// <summary>
     /// Event to trigger when data has been received.
     /// </summary>
     private event Action<Microphone, float> ReceivedData;
@@ -66,7 +73,6 @@ public class MQTT_Client : M2MqttUnityClient
         client.Subscribe(new string[] { "1" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
         client.Subscribe(new string[] { "2" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
         client.Subscribe(new string[] { "3" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
-
     }
 
     /// <summary>
@@ -97,7 +103,11 @@ public class MQTT_Client : M2MqttUnityClient
     protected override void DecodeMessage(string topic, byte[] message)
     {
         string msg = System.Text.Encoding.UTF8.GetString(message);
-        //Debug.Log("Topic: " + topic + " ~ Received: " + msg);
+
+        if (verboseLogging) 
+        {
+            Debug.Log("Topic: " + topic + " ~ Received: " + msg);
+        }
 
         ReceivedData?.Invoke((Microphone)int.Parse(topic), float.Parse(msg));
     }
