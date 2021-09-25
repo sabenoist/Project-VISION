@@ -34,7 +34,7 @@ def fake_sensors():
 	topic_id = 0
 
 	while (True):
-		time.sleep(3)
+		time.sleep(0.25)
 
 		publish(str(topic_id), "10")
 		
