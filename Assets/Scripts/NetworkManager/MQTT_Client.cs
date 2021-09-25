@@ -62,7 +62,11 @@ public class MQTT_Client : M2MqttUnityClient
     /// </summary>
     protected override void SubscribeTopics()
     {
-        client.Subscribe(new string[] { "mic0", "mic1", "mic2", "mic3" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+        client.Subscribe(new string[] { "0" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+        client.Subscribe(new string[] { "1" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+        client.Subscribe(new string[] { "2" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+        client.Subscribe(new string[] { "3" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+
     }
 
     /// <summary>
@@ -70,7 +74,10 @@ public class MQTT_Client : M2MqttUnityClient
     /// </summary>
     protected override void UnsubscribeTopics()
     {
-        client.Unsubscribe(new string[] { "mic0", "mic1", "mic2", "mic3" });
+        client.Unsubscribe(new string[] { "0" });
+        client.Unsubscribe(new string[] { "1" });
+        client.Unsubscribe(new string[] { "2" });
+        client.Unsubscribe(new string[] { "3" });
     }
 
     /// <summary>
