@@ -483,7 +483,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 314c38114dac15d478b5072ffa2451ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bar0: {fileID: 926501425717078169}
-  Bar1: {fileID: 3279630697185075712}
-  Bar2: {fileID: 4451966064806405517}
-  Bar3: {fileID: 3631642486802088413}
+  bars:
+  - {fileID: 926501425717078169}
+  - {fileID: 3279630697185075712}
+  - {fileID: 4451966064806405517}
+  - {fileID: 3631642486802088413}

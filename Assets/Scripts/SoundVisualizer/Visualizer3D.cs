@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -14,25 +15,7 @@ public class Visualizer3D : MonoBehaviour
 	/// Reference to the game object representing the first 3d bar.
 	/// </summary>
 	[SerializeField]
-    private GameObject Bar0;
-
-	/// <summary>
-	/// Reference to the game object representing the second 3d bar.
-	/// </summary>
-	[SerializeField]
-	private GameObject Bar1;
-
-	/// <summary>
-	/// Reference to the game object representing the third 3d bar.
-	/// </summary>
-	[SerializeField]
-	private GameObject Bar2;
-
-	/// <summary>
-	/// Reference to the game object representing the fourth 3d bar.
-	/// </summary>
-	[SerializeField]
-	private GameObject Bar3;
+    private List<GameObject> bars;
 
 	/// <summary>
 	/// Sets the respective 3d bar to the new given height.
@@ -41,28 +24,29 @@ public class Visualizer3D : MonoBehaviour
 	/// <param name="amplitude">The amplitude value to be determine the height of the bar.</param>
 	public void SetBarHeight(Microphone mic, float amplitude) 
 	{
-		GameObject visualizerObject;
+		GameObject bar = bars[(int)mic];
 
-		switch (mic) 
-		{
-			case Microphone.MIC0:
-				visualizerObject = Bar0;
-				break;
-			case Microphone.MIC1:
-				visualizerObject = Bar1;
-				break;
-			case Microphone.MIC2:
-				visualizerObject = Bar2;
-				break;
-			case Microphone.MIC3:
-				visualizerObject = Bar3;
-				break;
-			default:
-				return;
-		}
-
-		Vector3 newSize = visualizerObject.GetComponent<Transform>().localScale;
+		Vector3 newSize = bar.GetComponent<Transform>().localScale;
 		newSize.y = amplitude;
-		visualizerObject.GetComponent<Transform>().localScale = newSize;
+		bar.GetComponent<Transform>().localScale = newSize;
 	}
+
+	/// <summary>
+	/// Decays the height of each bar back to 0.
+	/// </summary>
+    public void FixedUpdate() 
+	{
+        foreach (GameObject bar in bars) 
+		{
+			Vector3 newSize = bar.GetComponent<Transform>().localScale;
+			newSize.y = newSize.y - 0.25f;
+
+			if (newSize.y < 0) 
+			{
+				newSize.y = 0;
+            }
+
+			bar.GetComponent<Transform>().localScale = newSize;
+		}
+    }
 }
