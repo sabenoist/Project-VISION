@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1937179046787398796}
   - component: {fileID: 7664837838620611686}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Bar0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 7793225061880508153}
   - component: {fileID: 5736615349098535646}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Bar1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 5048208580053280396}
   - component: {fileID: 4198179658405879314}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Bar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 2882666173595114078}
   - component: {fileID: 7278922941374690555}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Bar2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -483,5 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 314c38114dac15d478b5072ffa2451ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spectrumData: 15
-  visualizerObject: {fileID: 926501425717078169}
+  Bar0: {fileID: 926501425717078169}
+  Bar1: {fileID: 3279630697185075712}
+  Bar2: {fileID: 4451966064806405517}
+  Bar3: {fileID: 3631642486802088413}
