@@ -10,7 +10,7 @@ RESPEAKER_INDEX = 2  # refer to input device id
 RESPEAKER_FORMAT = pyaudio.paInt16
 CHUNK = 1024
 
-verbose_logging = True
+verbose_logging = False
 
 broker_address = "localhost" 
 topic_mic0 = "0"
@@ -28,8 +28,7 @@ stream = p.open(
             format=RESPEAKER_FORMAT,
             channels=RESPEAKER_CHANNELS,
             input=True,
-            input_device_index=RESPEAKER_INDEX,
-            frames_per_buffer=CHUNK)
+            input_device_index=RESPEAKER_INDEX,)
 
 
 def connect():
@@ -42,30 +41,27 @@ def connect():
 
 def publish(topic, msg):
 	client.publish(topic, msg)
-	
-	if (verbose_logging):	
+
+	if (verbose_logging):
 		print("Publishing on topic: " + topic + ", message: " + msg)
 
 
 def read_sensors():
-	i = 0
-	while(True and i < 5):
+	while(True):
 		frames = []
 		data = stream.read(CHUNK)
 
-		mic0 = np.fromstring(data,dtype=np.int16)[0::2][0]
-		mic1 = np.fromstring(data,dtype=np.int16)[1::2][0]
-		mic2 = np.fromstring(data,dtype=np.int16)[2::2][0]
-		mic3 = np.fromstring(data,dtype=np.int16)[3::2][0]
+		mic0 = np.fromstring(data,dtype=np.int16)[0::2][0]/float(100)
+		mic1 = np.fromstring(data,dtype=np.int16)[1::2][0]/float(100)
+		mic2 = np.fromstring(data,dtype=np.int16)[2::2][0]/float(100)
+		mic3 = np.fromstring(data,dtype=np.int16)[3::2][0]/float(100)
 
-    	frames.append(mic0)
-    	frames.append(mic1)
-    	frames.append(mic2)
-    	frames.append(mic3)
+	    	publish(topic_mic0, str(mic0))
+    		publish(topic_mic1, str(mic1))
+    		publish(topic_mic2, str(mic2))
+    		publish(topic_mic3, str(mic3))
 
-    	print(frames)
-    	i += 1
-    	
+
 
 def fake_sensors():
 	print("Faking sensor input...")
@@ -76,7 +72,7 @@ def fake_sensors():
 		time.sleep(0.25)
 
 		publish(str(topic_id), "10")
-		
+
 		topic_id += 1
 		if (topic_id > int(topic_mic3)):
 			topic_id = int(topic_mic0)
