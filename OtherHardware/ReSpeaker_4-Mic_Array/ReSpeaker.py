@@ -4,10 +4,10 @@ import pyaudio
 import numpy as np
 
 RESPEAKER_RATE = 16000
-RESPEAKER_CHANNELS = 2
-RESPEAKER_WIDTH = 2
+RESPEAKER_CHANNELS = 4
 # run getDeviceInfo.py to get index
-RESPEAKER_INDEX = 1  # refer to input device id
+RESPEAKER_INDEX = 2  # refer to input device id
+RESPEAKER_FORMAT = pyaudio.paInt16
 CHUNK = 1024
 
 verbose_logging = True
@@ -25,10 +25,11 @@ p = pyaudio.PyAudio()
 
 stream = p.open(
             rate=RESPEAKER_RATE,
-            format=p.get_format_from_width(RESPEAKER_WIDTH),
+            format=RESPEAKER_FORMAT,
             channels=RESPEAKER_CHANNELS,
             input=True,
-            input_device_index=RESPEAKER_INDEX,)
+            input_device_index=RESPEAKER_INDEX,
+            frames_per_buffer=CHUNK)
 
 
 def connect():
@@ -47,13 +48,23 @@ def publish(topic, msg):
 
 
 def read_sensors():
-	while(True):
-		time.sleep(1)
+	i = 0
+	while(True and i < 5):
 		frames = []
 		data = stream.read(CHUNK)
-    	frames.append(data)
+
+		mic0 = np.fromstring(data,dtype=np.int16)[0::2][0]
+		mic1 = np.fromstring(data,dtype=np.int16)[1::2][0]
+		mic2 = np.fromstring(data,dtype=np.int16)[2::2][0]
+		mic3 = np.fromstring(data,dtype=np.int16)[3::2][0]
+
+    	frames.append(mic0)
+    	frames.append(mic1)
+    	frames.append(mic2)
+    	frames.append(mic3)
 
     	print(frames)
+    	i += 1
     	
 
 def fake_sensors():
