@@ -6,9 +6,11 @@ import numpy as np
 RESPEAKER_RATE = 16000
 RESPEAKER_CHANNELS = 4
 # run getDeviceInfo.py to get index
-RESPEAKER_INDEX = 2  # refer to input device id
+RESPEAKER_INDEX = 1  # refer to input device id
 RESPEAKER_FORMAT = pyaudio.paInt16
 CHUNK = 1024
+
+AMPLITUDE_MODIFIER = 50
 
 verbose_logging = False
 
@@ -51,10 +53,10 @@ def read_sensors():
 		frames = []
 		data = stream.read(CHUNK)
 
-		mic0 = np.fromstring(data,dtype=np.int16)[0::RESPEAKER_CHANNELS][0]/float(100)
-		mic1 = np.fromstring(data,dtype=np.int16)[1::RESPEAKER_CHANNELS][0]/float(100)
-		mic2 = np.fromstring(data,dtype=np.int16)[2::RESPEAKER_CHANNELS][0]/float(100)
-		mic3 = np.fromstring(data,dtype=np.int16)[3::RESPEAKER_CHANNELS][0]/float(100)
+		mic0 = np.fromstring(data,dtype=np.int16)[0::RESPEAKER_CHANNELS][0]/float(AMPLITUDE_MODIFIER)
+		mic1 = np.fromstring(data,dtype=np.int16)[1::RESPEAKER_CHANNELS][0]/float(AMPLITUDE_MODIFIER)
+		mic2 = np.fromstring(data,dtype=np.int16)[2::RESPEAKER_CHANNELS][0]/float(AMPLITUDE_MODIFIER)
+		mic3 = np.fromstring(data,dtype=np.int16)[3::RESPEAKER_CHANNELS][0]/float(AMPLITUDE_MODIFIER)
 
 		publish(topic_mic0, str(mic0))
 		publish(topic_mic1, str(mic1))
