@@ -12,6 +12,12 @@ public enum Microphone { MIC0, MIC1, MIC2, MIC3 }
 public class Visualizer3D : MonoBehaviour
 {
 	/// <summary>
+	/// Sets the threshold for ignoring messages that fall below it.
+	/// </summary>
+	[SerializeField]
+	private float threshold = 1;
+
+	/// <summary>
 	/// Reference to the game object representing the first 3d bar.
 	/// </summary>
 	[SerializeField]
@@ -24,6 +30,10 @@ public class Visualizer3D : MonoBehaviour
 	/// <param name="amplitude">The amplitude value to be determine the height of the bar.</param>
 	public void SetBarHeight(Microphone mic, float amplitude) 
 	{
+		if (amplitude < threshold) {
+			return;
+        }
+
 		GameObject bar = bars[(int)mic];
 
 		Vector3 newSize = bar.GetComponent<Transform>().localScale;
