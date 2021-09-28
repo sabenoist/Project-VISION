@@ -9,7 +9,7 @@ public class RandomSoundButton : MonoBehaviour
     /// Reference to the Visualizer3D script.
     /// </summary>
     [SerializeField]
-    private Visualizer3D visualizerScript;
+    private Visualizer visualizerScript;
 
     /// <summary>
     /// The maximum value that can be randomly generated.
@@ -18,7 +18,7 @@ public class RandomSoundButton : MonoBehaviour
     private float maxRange;
 
     /// <summary>
-    /// Generates random values in range of the <see cref="maxRange"/> for the 3d bars of the <see cref="Visualizer3D"/> object.
+    /// Generates random values in range of the <see cref="maxRange"/> for the 3d bars of the <see cref="Visualizer"/> object.
     /// </summary>
     public void GenerateRandomValues() {
         visualizerScript.SetBarHeight(Microphone.MIC0, Random.Range(0f, maxRange));

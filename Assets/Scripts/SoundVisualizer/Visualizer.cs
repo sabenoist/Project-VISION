@@ -9,13 +9,19 @@ public enum Microphone { MIC0, MIC1, MIC2, MIC3 }
 /// <summary>
 /// Class to handle the visualization of the 3d bars.
 /// </summary>
-public class Visualizer3D : MonoBehaviour
+public class Visualizer : MonoBehaviour
 {
 	/// <summary>
 	/// Sets the threshold for ignoring messages that fall below it.
 	/// </summary>
 	[SerializeField]
-	private float threshold = 1;
+	private float threshold = 15;
+
+	/// <summary>
+	/// Sets the decay rate of the bars.
+	/// </summary>
+	[SerializeField]
+	private float decay = 2.5f;
 
 	/// <summary>
 	/// Reference to the game object representing the first 3d bar.
@@ -35,10 +41,8 @@ public class Visualizer3D : MonoBehaviour
         }
 
 		GameObject bar = bars[(int)mic];
-
-		Vector3 newSize = bar.GetComponent<Transform>().localScale;
-		newSize.y = amplitude;
-		bar.GetComponent<Transform>().localScale = newSize;
+		RectTransform rectTransform = bar.GetComponent<RectTransform>();
+		rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, amplitude);
 	}
 
 	/// <summary>
@@ -48,15 +52,15 @@ public class Visualizer3D : MonoBehaviour
 	{
         foreach (GameObject bar in bars) 
 		{
-			Vector3 newSize = bar.GetComponent<Transform>().localScale;
-			newSize.y = newSize.y - 0.25f;
+			RectTransform rectTransform = bar.GetComponent<RectTransform>();
+			float newHeight = rectTransform.sizeDelta.y - decay;
 
-			if (newSize.y < 0) 
+			if (newHeight < 0) 
 			{
-				newSize.y = 0;
+				newHeight = 0;
             }
 
-			bar.GetComponent<Transform>().localScale = newSize;
+			rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, newHeight);
 		}
     }
 
@@ -65,15 +69,20 @@ public class Visualizer3D : MonoBehaviour
 	/// </summary>
     public void OnEnable() 
 	{
-		MQTT_Client.NetworkManager.AddReceivedDataListener(SetBarHeight);
-    }
+		if (MQTT_Client.NetworkManager != null) { 
+			MQTT_Client.NetworkManager.AddReceivedDataListener(SetBarHeight);
+		}
+		else {
+			Debug.Log("Connection to MQTT client could not be found. Aborting adding listener.");
+        }
+	}
 
 	/// <summary>
 	/// Removes an event listener from <see cref="MQTT_Client"/> for when new data arrives from the MQTT broker.
 	/// </summary>
 	public void OnDisable() {
-		MQTT_Client.NetworkManager.RemoveReceivedDataListener(SetBarHeight);
+		if (MQTT_Client.NetworkManager != null) {
+			MQTT_Client.NetworkManager.RemoveReceivedDataListener(SetBarHeight);
+		}
     }
-
-
 }
