@@ -64,20 +64,5 @@ def read_sensors():
 		publish(topic_mic3, str(mic3))
 
 
-def fake_sensors():
-	print("Faking sensor input...")
-
-	topic_id = 0
-
-	while (True):
-		time.sleep(0.25)
-
-		publish(str(topic_id), "10")
-
-		topic_id += 1
-		if (topic_id > int(topic_mic3)):
-			topic_id = int(topic_mic0)
-
-
 if __name__ == "__main__":
 	connect()
