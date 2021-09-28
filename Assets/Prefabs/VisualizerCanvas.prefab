@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 6016347437622451214}
   - component: {fileID: 7358567362864482220}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Bar1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136,7 +136,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 57, y: 0}
+  m_AnchoredPosition: {x: 57, y: 50}
   m_SizeDelta: {x: 50, y: 15}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &434341843082623331
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 5566743668388749991}
   - component: {fileID: 6761224654037674050}
   m_Layer: 5
-  m_Name: Image (3)
+  m_Name: Bar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -224,7 +224,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -108.1, y: 0}
+  m_AnchoredPosition: {x: -108.1, y: 50}
   m_SizeDelta: {x: 50, y: 15}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &225303544911450529
@@ -290,7 +290,7 @@ GameObject:
   - component: {fileID: 3695231438847879145}
   - component: {fileID: 5318508694169762393}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Bar0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -312,7 +312,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 50}
   m_SizeDelta: {x: 50, y: 15}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &3285378891731231516
@@ -526,7 +526,7 @@ GameObject:
   - component: {fileID: 851628833738332556}
   - component: {fileID: 6022274279477885256}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: Bar2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -548,7 +548,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -54, y: 0}
+  m_AnchoredPosition: {x: -54, y: 50}
   m_SizeDelta: {x: 50, y: 15}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &4652786563418779967
@@ -610,14 +610,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4819459572054249576}
-  - component: {fileID: 2075410401565605502}
+  - component: {fileID: 8322575417025853766}
   m_Layer: 5
   m_Name: SoundVisualizer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4819459572054249576
 RectTransform:
   m_ObjectHideFlags: 0
@@ -641,7 +641,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2075410401565605502
+--- !u!114 &8322575417025853766
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -650,16 +650,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8033184367879608842}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbe5d3faacc033049ada19966ddfaaa4, type: 3}
+  m_Script: {fileID: 11500000, guid: 314c38114dac15d478b5072ffa2451ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minHeight: 15
-  maxHeight: 425
-  updateSentivity: 10
-  visualizerColor: {r: 0, g: 0.15554105, b: 0.9716981, a: 1}
-  audioClip: {fileID: 8300000, guid: 046adb011622dc345b4a6d6fc5d03c72, type: 3}
-  loop: 1
-  visualizerSimples: 64
+  threshold: 1
+  bars:
+  - {fileID: 4991931564720695274}
+  - {fileID: 1860192472911930613}
+  - {fileID: 6430717364726589113}
+  - {fileID: 2149250708365768258}
 --- !u!1 &8093739329019094157
 GameObject:
   m_ObjectHideFlags: 0

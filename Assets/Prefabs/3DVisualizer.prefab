@@ -483,6 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 314c38114dac15d478b5072ffa2451ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  threshold: 1
   bars:
   - {fileID: 926501425717078169}
   - {fileID: 3279630697185075712}
