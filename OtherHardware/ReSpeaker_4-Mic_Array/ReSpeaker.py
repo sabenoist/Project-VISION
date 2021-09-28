@@ -51,16 +51,15 @@ def read_sensors():
 		frames = []
 		data = stream.read(CHUNK)
 
-		mic0 = np.fromstring(data,dtype=np.int16)[0::2][0]/float(100)
-		mic1 = np.fromstring(data,dtype=np.int16)[1::2][0]/float(100)
-		mic2 = np.fromstring(data,dtype=np.int16)[2::2][0]/float(100)
-		mic3 = np.fromstring(data,dtype=np.int16)[3::2][0]/float(100)
+		mic0 = np.fromstring(data,dtype=np.int16)[0::RESPEAKER_CHANNELS][0]/float(100)
+		mic1 = np.fromstring(data,dtype=np.int16)[1::RESPEAKER_CHANNELS][0]/float(100)
+		mic2 = np.fromstring(data,dtype=np.int16)[2::RESPEAKER_CHANNELS][0]/float(100)
+		mic3 = np.fromstring(data,dtype=np.int16)[3::RESPEAKER_CHANNELS][0]/float(100)
 
-	    	publish(topic_mic0, str(mic0))
-    		publish(topic_mic1, str(mic1))
-    		publish(topic_mic2, str(mic2))
-    		publish(topic_mic3, str(mic3))
-
+		publish(topic_mic0, str(mic0))
+		publish(topic_mic1, str(mic1))
+		publish(topic_mic2, str(mic2))
+		publish(topic_mic3, str(mic3))
 
 
 def fake_sensors():
