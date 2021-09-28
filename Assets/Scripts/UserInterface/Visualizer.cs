@@ -42,7 +42,10 @@ public class Visualizer : MonoBehaviour
 
 		GameObject bar = bars[(int)mic];
 		RectTransform rectTransform = bar.GetComponent<RectTransform>();
-		rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, amplitude);
+
+		if (rectTransform.sizeDelta.y < amplitude) {
+			rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, amplitude);
+		}
 	}
 
 	/// <summary>

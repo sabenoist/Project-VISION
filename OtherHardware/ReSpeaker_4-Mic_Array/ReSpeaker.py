@@ -10,7 +10,7 @@ RESPEAKER_INDEX = 1  # refer to input device id
 RESPEAKER_FORMAT = pyaudio.paInt16
 CHUNK = 1024
 
-AMPLITUDE_MODIFIER = 50
+AMPLITUDE_MODIFIER = 10
 
 verbose_logging = False
 
