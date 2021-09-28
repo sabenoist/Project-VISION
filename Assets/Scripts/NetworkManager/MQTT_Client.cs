@@ -2,12 +2,19 @@
 using uPLibrary.Networking.M2Mqtt.Messages;
 using M2MqttUnity;
 using System;
+using UnityEngine.UI;
 
 /// <summary>
 /// Subclass of the library <see cref="M2MqttUnityClient"/> to handle our connection to the MQTT broker.
 /// </summary>
 public class MQTT_Client : M2MqttUnityClient
 {
+    /// <summary>
+    /// Reference to the text field to display the connection status.
+    /// </summary>
+    [SerializeField]
+    private Text connectionStatus;
+
     /// <summary>
     /// Array of topics to subscribe to.
     /// </summary>
@@ -61,7 +68,18 @@ public class MQTT_Client : M2MqttUnityClient
     /// </summary>
     protected override void OnConnected()
     {
+        connectionStatus.text = "Connected";
+        connectionStatus.color = Color.green;
         base.OnConnected();
+    }
+
+    /// <summary>
+    /// To execute when a connection has been lost.
+    /// </summary>
+    protected override void OnDisconnected() {
+        connectionStatus.text = "Disconnected";
+        connectionStatus.color = Color.red;
+        base.OnDisconnected();
     }
 
     /// <summary>
