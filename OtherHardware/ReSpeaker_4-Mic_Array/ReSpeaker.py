@@ -10,7 +10,7 @@ RESPEAKER_INDEX = 1  # refer to input device id
 RESPEAKER_FORMAT = pyaudio.paInt16
 CHUNK = 1024
 
-AMPLITUDE_MODIFIER = 10
+AMPLITUDE_MODIFIER = 1
 
 verbose_logging = False
 
@@ -52,16 +52,21 @@ def read_sensors():
 	while(True):
 		frames = []
 		data = stream.read(CHUNK)
+		date_numbers = np.fromstring(data,dtype=np.int16)
 
-		mic0 = np.fromstring(data,dtype=np.int16)[0::RESPEAKER_CHANNELS][0]/float(AMPLITUDE_MODIFIER)
-		mic1 = np.fromstring(data,dtype=np.int16)[1::RESPEAKER_CHANNELS][0]/float(AMPLITUDE_MODIFIER)
-		mic2 = np.fromstring(data,dtype=np.int16)[2::RESPEAKER_CHANNELS][0]/float(AMPLITUDE_MODIFIER)
-		mic3 = np.fromstring(data,dtype=np.int16)[3::RESPEAKER_CHANNELS][0]/float(AMPLITUDE_MODIFIER)
+		mic0 = avg(data_numbers[0::RESPEAKER_CHANNELS])/float(AMPLITUDE_MODIFIER)
+		mic1 = avg(data_numbers[1::RESPEAKER_CHANNELS])/float(AMPLITUDE_MODIFIER)
+		mic2 = avg(data_numbers[2::RESPEAKER_CHANNELS])/float(AMPLITUDE_MODIFIER)
+		mic3 = avg(data_numbers[3::RESPEAKER_CHANNELS])/float(AMPLITUDE_MODIFIER)
 
 		publish(topic_mic0, str(mic0))
 		publish(topic_mic1, str(mic1))
 		publish(topic_mic2, str(mic2))
 		publish(topic_mic3, str(mic3))
+
+
+def avg(values):
+	return sum(values)/len(values)
 
 
 if __name__ == "__main__":
