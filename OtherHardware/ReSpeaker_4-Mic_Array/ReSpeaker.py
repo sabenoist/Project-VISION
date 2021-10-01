@@ -52,7 +52,7 @@ def read_sensors():
 	while(True):
 		frames = []
 		data = stream.read(CHUNK)
-		date_numbers = np.fromstring(data,dtype=np.int16)
+		data_numbers = np.fromstring(data,dtype=np.int16)
 
 		mic0 = avg(data_numbers[0::RESPEAKER_CHANNELS])/float(AMPLITUDE_MODIFIER)
 		mic1 = avg(data_numbers[1::RESPEAKER_CHANNELS])/float(AMPLITUDE_MODIFIER)
