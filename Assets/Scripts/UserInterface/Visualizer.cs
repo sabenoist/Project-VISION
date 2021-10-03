@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,7 +16,13 @@ public class Visualizer : MonoBehaviour
 	/// Sets the threshold for ignoring messages that fall below it.
 	/// </summary>
 	[SerializeField]
-	private float threshold = 15;
+	private float threshold = 0;
+
+	/// <summary>
+	/// Sets the threshold for ignoring messages that fall below it.
+	/// </summary>
+	[SerializeField]
+	private float modifier = 1;
 
 	/// <summary>
 	/// Sets the decay rate of the bars.
@@ -40,11 +47,13 @@ public class Visualizer : MonoBehaviour
 			return;
         }
 
+		amplitude = (float)Math.Sqrt(amplitude * amplitude); // turns any negative value into a positive one.
+
 		GameObject bar = bars[(int)mic];
 		RectTransform rectTransform = bar.GetComponent<RectTransform>();
 
 		if (rectTransform.sizeDelta.y < amplitude) {
-			rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, amplitude);
+			rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, amplitude * modifier);
 		}
 	}
 
@@ -56,7 +65,7 @@ public class Visualizer : MonoBehaviour
         foreach (GameObject bar in bars) 
 		{
 			RectTransform rectTransform = bar.GetComponent<RectTransform>();
-			float newHeight = rectTransform.sizeDelta.y - decay;
+			float newHeight = rectTransform.sizeDelta.y * 0.95f - decay;
 
 			if (newHeight < 0) 
 			{
