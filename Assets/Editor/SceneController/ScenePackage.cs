@@ -6,8 +6,7 @@ using UnityEngine;
 /// Holds the scenes that belong to each other.
 /// </summary>
 [CreateAssetMenu(fileName = "ScenePackage", menuName = "Scenes/Create ScenePackage", order = 1)]
-public class ScenePackage : ScriptableObject
-{
+public class ScenePackage : ScriptableObject {
     /// <summary>
     /// The name of the scene.
     /// </summary>
