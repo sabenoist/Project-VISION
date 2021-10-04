@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -43,7 +44,8 @@ public class Visualizer : MonoBehaviour
 	/// <param name="amplitude">The amplitude value to be determine the height of the bar.</param>
 	public void SetBarHeight(Microphone mic, float amplitude) 
 	{
-		if (amplitude < threshold) {
+		if (amplitude < threshold) 
+		{
 			return;
         }
 
@@ -52,7 +54,8 @@ public class Visualizer : MonoBehaviour
 		GameObject bar = bars[(int)mic];
 		RectTransform rectTransform = bar.GetComponent<RectTransform>();
 
-		if (rectTransform.sizeDelta.y < amplitude) {
+		if (rectTransform.sizeDelta.y < amplitude) 
+		{
 			rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, amplitude * modifier);
 		}
 	}
@@ -81,20 +84,31 @@ public class Visualizer : MonoBehaviour
 	/// </summary>
     public void OnEnable() 
 	{
-		if (MQTT_Client.NetworkManager != null) { 
-			MQTT_Client.NetworkManager.AddReceivedDataListener(SetBarHeight);
-		}
-		else {
+		while (MQTT_Client.NetworkManager == null) {
 			Debug.Log("Connection to MQTT client could not be found. Aborting adding listener.");
-        }
+			StartCoroutine(Pause(1));
+		}
+
+		MQTT_Client.NetworkManager.AddReceivedDataListener(SetBarHeight);
 	}
 
 	/// <summary>
 	/// Removes an event listener from <see cref="MQTT_Client"/> for when new data arrives from the MQTT broker.
 	/// </summary>
-	public void OnDisable() {
+	public void OnDisable() 
+	{
 		if (MQTT_Client.NetworkManager != null) {
 			MQTT_Client.NetworkManager.RemoveReceivedDataListener(SetBarHeight);
 		}
+    }
+
+	/// <summary>
+	/// Pauses the execution of this script.
+	/// </summary>
+	/// <param name="seconds">The amount of seconds the script gets paused.</param>
+	/// <returns>Stuff needed for the Coroutine.</returns>
+	private IEnumerator Pause(float seconds) 
+	{
+		yield return new WaitForSeconds(seconds);
     }
 }
