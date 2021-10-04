@@ -84,12 +84,7 @@ public class Visualizer : MonoBehaviour
 	/// </summary>
     public void OnEnable() 
 	{
-		while (MQTT_Client.NetworkManager == null) {
-			Debug.Log("Connection to MQTT client could not be found. Aborting adding listener.");
-			StartCoroutine(Pause(1));
-		}
-
-		MQTT_Client.NetworkManager.AddReceivedDataListener(SetBarHeight);
+		StartCoroutine(SubscribeListeners());  //TODO: Get rid of this hack.
 	}
 
 	/// <summary>
@@ -107,8 +102,12 @@ public class Visualizer : MonoBehaviour
 	/// </summary>
 	/// <param name="seconds">The amount of seconds the script gets paused.</param>
 	/// <returns>Stuff needed for the Coroutine.</returns>
-	private IEnumerator Pause(float seconds) 
+	private IEnumerator SubscribeListeners() 
 	{
-		yield return new WaitForSeconds(seconds);
-    }
+		while (MQTT_Client.NetworkManager == null) {
+			yield return new WaitForSeconds(1);
+		}
+
+		MQTT_Client.NetworkManager.AddReceivedDataListener(SetBarHeight);
+	}
 }
