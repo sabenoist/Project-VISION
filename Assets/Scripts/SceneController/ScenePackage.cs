@@ -17,5 +17,5 @@ public class ScenePackage : ScriptableObject {
     /// Holds the scenes that belong to each other.
     /// </summary>
     [field: SerializeField]
-    public List<SceneAsset> Scenes { get; private set; }
+    public List<string> Scenes { get; private set; }
 }

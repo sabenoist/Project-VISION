@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0113be78062757469c5fbc3fa3c81fd, type: 3}
   m_Name: UserInterface
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Interactive
+  <Name>k__BackingField: 0
   <Scenes>k__BackingField:
-  - {fileID: 102900000, guid: 55a231cdc458d2c4aad00e396f79d65c, type: 3}
-  - {fileID: 102900000, guid: e8038d5350ce2fc45a5566d3276b66a1, type: 3}
+  - UserInterfaceContent
+  - UserInterfaceStatic

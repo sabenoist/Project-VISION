@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -41,8 +40,8 @@ public class SceneController : MonoBehaviour
 
         UnloadScenes();
         
-        foreach(SceneAsset scene in package.Scenes) {
-            SceneManager.LoadSceneAsync(scene.name, LoadSceneMode.Additive);
+        foreach(string scene in package.Scenes) {
+            SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
         }
         
     }
