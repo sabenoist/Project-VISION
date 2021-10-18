@@ -87,10 +87,15 @@ public class MQTT_Client : M2MqttUnityClient
     /// </summary>
     protected override void SubscribeTopics()
     {
-        client.Subscribe(new string[] { "0" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
-        client.Subscribe(new string[] { "1" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
-        client.Subscribe(new string[] { "2" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
-        client.Subscribe(new string[] { "3" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+        foreach (string topic in topics) {
+            client.Subscribe(new string[] { topic }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+            Debug.Log("Subscribed to topic: " + topic + "\n");
+        }
+        //client.Subscribe(new string[] { "0" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+        //client.Subscribe(new string[] { "1" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+        //client.Subscribe(new string[] { "2" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+        //client.Subscribe(new string[] { "3" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+        //client.Subscribe(new string[] { "sensor" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
     }
 
     /// <summary>
@@ -98,10 +103,14 @@ public class MQTT_Client : M2MqttUnityClient
     /// </summary>
     protected override void UnsubscribeTopics()
     {
-        client.Unsubscribe(new string[] { "0" });
-        client.Unsubscribe(new string[] { "1" });
-        client.Unsubscribe(new string[] { "2" });
-        client.Unsubscribe(new string[] { "3" });
+        foreach (string topic in topics) {
+            client.Unsubscribe(new string[] { topic });
+        }
+        //client.Unsubscribe(new string[] { "0" });
+        //client.Unsubscribe(new string[] { "1" });
+        //client.Unsubscribe(new string[] { "2" });
+        //client.Unsubscribe(new string[] { "3" });
+        //client.Unsubscribe(new string[] { "sensor" });
     }
 
     /// <summary>
@@ -124,10 +133,11 @@ public class MQTT_Client : M2MqttUnityClient
 
         if (verboseLogging) 
         {
-            Debug.Log("Topic: " + topic + " ~ Received: " + msg);
+            Debug.Log("Topic: " + topic + " ~ Received: " + msg + "\n");
         }
 
-        ReceivedData?.Invoke((Microphone)int.Parse(topic), float.Parse(msg));
+        //TODO: rewrite
+        //ReceivedData?.Invoke((Microphone)int.Parse(topic), float.Parse(msg));
     }
 
     /// <summary>

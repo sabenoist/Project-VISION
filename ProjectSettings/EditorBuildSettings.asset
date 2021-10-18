@@ -5,6 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/ARSetupAndroid.unity
+    guid: 3d3d50750cde1f340857df4d6f920e73
   - enabled: 1
     path: Assets/Scenes/ARSetup.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab

@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbaa80705124f9e439d56ca6d5e6db69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brokerAddress: localhost
+  brokerAddress: hermes
   brokerPort: 1883
   isEncrypted: 0
   connectionDelay: 500
@@ -51,8 +51,7 @@ MonoBehaviour:
   autoConnect: 1
   mqttUserName: 
   mqttPassword: 
+  connectionStatus: {fileID: 0}
   topics:
-  - mic0
-  - mic1
-  - mic2
-  - mic3
+  - sensor
+  verboseLogging: 0
