@@ -2,75 +2,66 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class CircleAnimation : MonoBehaviour
 {
-	//public float minHeight = 15.0f;
-	//public float maxHeight = 425.0f;
-	//public float updateSentivity = 10.0f;
-	//public Color visualizerColor = Color.gray;
-	//[Space(15)]
-	//public AudioClip audioClip;
-	//public bool loop = true;
-	//[Space(15), Range(64, 8192)]
-	//public int visualizerSimples = 64;
 
-	public float[] spectrumData;
-	//public float spectrumData = 25.0f;
-	public GameObject[] visualizerObjects;
-	//AudioSource audioSource;
+
+	public float[] volumnData;//to be accepted from the server
+	
+	public GameObject circlePrefab; //prefab to be Instantiated
+	public GameObject[] CircleGroup; //store the instantiated prefab
+
 
 	// Use this for initialization
 	void Start()
 	{
-		/*visualizerObjects = GetComponentsInChildren<VisualizerObjectScript>();
-
-		if (!audioClip)
-			return;
-
-		audioSource = new GameObject("_AudioSource").AddComponent<AudioSource>();
-		audioSource.loop = loop;
-		audioSource.clip = audioClip;
-		audioSource.Play();*/
+		
 	}
 
 	// Update is called once per frame
 	void FixedUpdate()
 	{
-		//float[] spectrumData = audioSource.GetSpectrumData(visualizerSimples, 0, FFTWindow.Rectangular);
-
-		for (int i = 0; i < visualizerObjects.Length; i++)
+	
+		for (int i = 0; i < volumnData.Length; i++)
 		{
-			//RectTransform rectTransform = visualizerObjects[i].GetComponent<RectTransform>();
-			//rectTransform.sizeDelta = new Vector2(spectrumData, spectrumData);        //newSize.y = Mathf.Clamp(Mathf.Lerp(newSize.y, minHeight + (spectrumData[i] * (maxHeight - minHeight) * 5.0f), updateSentivity * 0.5f), minHeight, maxHeight);
-
-			Vector3 newSize = visualizerObjects[i].GetComponent<Transform>().localScale;
-
-			if (spectrumData[i]>5)
+		
+			//filter out sound below certain volumn
+			if (volumnData[i] >2 & !CircleGroup[i])
             {
-				//newSize.y = Mathf.Clamp(Mathf.Lerp(newSize.y, minHeight + (spectrumData[i] * (maxHeight - minHeight) * 5.0f), updateSentivity * 0.5f), minHeight, maxHeight);
-				newSize.y = spectrumData[i];
-				newSize.x = spectrumData[i];
-				visualizerObjects[i].GetComponent<Transform>().localScale = newSize;
-				//visualizerObjects [i].GetComponent<Image> ().color = visualizerColor;
 
+				//instantiate circle prefab and specify position with Vector3
+				CircleGroup[i]=Instantiate(circlePrefab, new Vector3(0,0,0), Quaternion.identity) as GameObject;
+				Vector3 newSize = circlePrefab.GetComponent<Transform>().localScale;
+				//change size of the circle based on the  spectrumData
+				newSize.y = volumnData[i];
+				newSize.x = volumnData[i];
+				circlePrefab.GetComponent<Transform>().localScale = newSize;
+				
+				Destroy(CircleGroup[i], 1);//destory circle after 2 seconds
+
+				//remove used spectrumData from array to prevent it instantiate prefab again
 				StartCoroutine(ShowAndHide(0.5f));
-			}
 
-			else
-            {
-				//filter out sound under certain volumn
-				visualizerObjects[i].SetActive(false);
 			}
+			
+			/*if ()
+			{
+				//filter out sound under certain volumn
+				circlePrefab.SetActive(false);
+			}*/
 		}
 	}
 
 	IEnumerator ShowAndHide(float delay)
 	{
-		for (int i = 0; i < visualizerObjects.Length; i++)//visualizerObjects.SetActive(true
-		{
+		for(int i = 0; i < volumnData.Length; i++)
+        {
 			yield return new WaitForSeconds(delay);
-			visualizerObjects[i].SetActive(false);
+			volumnData = volumnData.Skip(i).ToArray();
 		}
+			
+		
 	}
 }
