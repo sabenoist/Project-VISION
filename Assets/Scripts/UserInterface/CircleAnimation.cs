@@ -34,6 +34,9 @@ public class CircleAnimation : MonoBehaviour
 				{
 				//instantiate circle prefab and specify position with Vector3
 				CircleGroup[i]=Instantiate(circleRed, position[i], Quaternion.identity) as GameObject;
+				//instantiate prefab as child of CircleCanvas
+				CircleGroup[i].transform.SetParent(GameObject.FindGameObjectWithTag("CircleCanvas").transform, false);
+
 				Vector3 newSize = circleRed.GetComponent<Transform>().localScale;
 				//change size of the circle based on the  spectrumData
 				newSize.y = volumnData[i];
@@ -54,7 +57,10 @@ public class CircleAnimation : MonoBehaviour
 					//instantiate circle prefab and specify position with Vector3
 					//receive position value from server
 					CircleGroup[i] = Instantiate(circleBlue, position[i], Quaternion.identity) as GameObject;
-					Vector3 newSize = circleBlue.GetComponent<Transform>().localScale;
+				    //instantiate prefab as child of CircleCanvas
+				    CircleGroup[i].transform.SetParent(GameObject.FindGameObjectWithTag("CircleCanvas").transform, false);
+
+				    Vector3 newSize = circleBlue.GetComponent<Transform>().localScale;
 					//change size of the circle based on the  spectrumData
 					newSize.y = volumnData[i];
 					newSize.x = volumnData[i];
@@ -70,7 +76,10 @@ public class CircleAnimation : MonoBehaviour
 				{
 					//instantiate circle prefab and specify position with Vector3
 					CircleGroup[i] = Instantiate(circleGreen, position[i], Quaternion.identity) as GameObject;
-					Vector3 newSize = circleGreen.GetComponent<Transform>().localScale;
+				    //instantiate prefab as child of CircleCanvas
+				    CircleGroup[i].transform.SetParent(GameObject.FindGameObjectWithTag("CircleCanvas").transform, false);
+
+			      	Vector3 newSize = circleGreen.GetComponent<Transform>().localScale;
 					//change size of the circle based on the  spectrumData
 					newSize.y = volumnData[i];
 					newSize.x = volumnData[i];
@@ -101,18 +110,18 @@ public class CircleAnimation : MonoBehaviour
 	//slowly fade out the circle
 	IEnumerator FadeOutMaterial(float fadeSpeed, GameObject circle)
 	{
-		
-			Renderer rend = circle.transform.GetComponent<Renderer>();
-		    Color matColor = rend.material.color;
-		    float alphaValue = rend.material.color.a;
 
-		   while (rend.material.color.a > 0f)
-		   {
-			  alphaValue -= Time.deltaTime / fadeSpeed;
-			  rend.material.color = new Color(matColor.r, matColor.g, matColor.b, alphaValue);
-			  yield return null;
-		   }
-		   rend.material.color = new Color(matColor.r, matColor.g, matColor.b, 0f);
+		RawImage image = circle.transform.GetComponent<RawImage>();
+		Color oldColor = image.color;
+		float alphaValue = image.color.a;
 		
+		while (image.color.a > 0f)
+		{
+			alphaValue -= Time.deltaTime / fadeSpeed;
+			image.color = new Color(oldColor.r, oldColor.g, oldColor.b, alphaValue);
+			yield return null;
+		}
+		image.color = new Color(oldColor.r, oldColor.g, oldColor.b, 0f);
+
 	}
 }

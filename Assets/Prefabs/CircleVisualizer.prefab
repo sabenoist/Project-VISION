@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2920513947827194747}
-  - component: {fileID: 2920513947827194744}
+  - component: {fileID: 6400626515903346101}
   m_Layer: 0
   m_Name: CircleVisualizer
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2920513947827194744
+--- !u!114 &6400626515903346101
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,21 +40,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2920513947827194746}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4153eaa74f8af04c97507bd4a42dd2f, type: 3}
+  m_Script: {fileID: 11500000, guid: ef274b7e9ec7a084a91daf5a84de9fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumnData:
-  - 6
-  - 8
-  - 10
-  pitch:
-  - Medium
-  - High
-  - Low
-  position:
-  - {x: 0, y: 2, z: 18}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
   circleRed: {fileID: 6875018207915407313, guid: cbb76d7ab523c4944aa28d423a047492, type: 3}
   circleBlue: {fileID: 6875018207915407313, guid: 06d747dabacc72a43bd5763b3c8ea905, type: 3}
   circleGreen: {fileID: 6875018207915407313, guid: 849dfe2cf2b9b374bb14df54aee4af66, type: 3}
@@ -63,4 +51,15 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
+  volumnData:
+  - 3
+  - 5
+  - 7
+  pitch:
+  - Low
+  - Medium
+  - High
+  position:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
