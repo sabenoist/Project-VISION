@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -199,6 +199,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VisualizerCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 883395692801082898, guid: 73fceca82a6a75846a7b6d82187f8a28, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 883395692801082902, guid: 73fceca82a6a75846a7b6d82187f8a28, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -311,6 +315,10 @@ PrefabInstance:
     - target: {fileID: 2491788636400434108, guid: 04d0553b23993464a8930d6ef11b7208, type: 3}
       propertyPath: m_Name
       value: UserInterfaceGeneral
+      objectReference: {fileID: 0}
+    - target: {fileID: 2491788636400434108, guid: 04d0553b23993464a8930d6ef11b7208, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7917254010573599655, guid: 04d0553b23993464a8930d6ef11b7208, type: 3}
       propertyPath: m_Pivot.x

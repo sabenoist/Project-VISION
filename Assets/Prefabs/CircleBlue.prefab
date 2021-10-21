@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 6797259117340039005}
   - component: {fileID: 1474422614817097096}
   - component: {fileID: 3945453413277191197}
-  - component: {fileID: 3198933839166963275}
   m_Layer: 5
-  m_Name: Circle
+  m_Name: CircleBlue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +28,7 @@ RectTransform:
   m_GameObject: {fileID: 6875018207915407313}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 10}
+  m_LocalScale: {x: 6, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -37,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1000, y: 1000}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!33 &6797259117340039005
 MeshFilter:
@@ -67,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3513991b6f3924b4ebe61d4bd8d71ce0, type: 2}
+  - {fileID: 2100000, guid: e92d8c49152e2384fa7fdfabb37ce248, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -103,18 +102,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &3198933839166963275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6875018207915407313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4153eaa74f8af04c97507bd4a42dd2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volumnData: []
-  circlePrefab: {fileID: 0}
-  CircleGroup: []
