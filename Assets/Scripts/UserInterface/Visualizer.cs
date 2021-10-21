@@ -44,6 +44,7 @@ public class Visualizer : MonoBehaviour
 	/// <param name="amplitude">The amplitude value to be determine the height of the bar.</param>
 	public void SetBarHeight(Microphone mic, float amplitude) 
 	{
+		//TODO: DELETE
 		if (amplitude < threshold) 
 		{
 			return;
@@ -65,6 +66,7 @@ public class Visualizer : MonoBehaviour
 	/// </summary>
     public void FixedUpdate() 
 	{
+		//TODO: DELETE
         foreach (GameObject bar in bars) 
 		{
 			RectTransform rectTransform = bar.GetComponent<RectTransform>();
@@ -79,12 +81,22 @@ public class Visualizer : MonoBehaviour
 		}
     }
 
+	public void ProcessData(Dictionary<string, string> data)
+    {
+		//TODO
+		Debug.Log("---------------------------");
+		foreach (string key in data.Keys)
+        {
+			Debug.Log(key + " = " + data[key]);
+        }
+    }
+
 	/// <summary>
 	/// Attaches an event listener to <see cref="MQTT_Client"/> for when new data arrives from the MQTT broker. 
 	/// </summary>
     public void OnEnable() 
 	{
-		StartCoroutine(SubscribeListeners());  //TODO: Get rid of this hack.
+		StartCoroutine(SubscribeListeners());
 	}
 
 	/// <summary>
@@ -93,12 +105,12 @@ public class Visualizer : MonoBehaviour
 	public void OnDisable() 
 	{
 		if (MQTT_Client.NetworkManager != null) {
-			MQTT_Client.NetworkManager.RemoveReceivedDataListener(SetBarHeight);
+			MQTT_Client.NetworkManager.RemoveReceivedDataListener(ProcessData);
 		}
     }
 
 	/// <summary>
-	/// Pauses the execution of this script.
+	/// Pauses the execution of this script until the NetworkManager is ready.
 	/// </summary>
 	/// <param name="seconds">The amount of seconds the script gets paused.</param>
 	/// <returns>Stuff needed for the Coroutine.</returns>
@@ -108,6 +120,6 @@ public class Visualizer : MonoBehaviour
 			yield return new WaitForSeconds(1);
 		}
 
-		MQTT_Client.NetworkManager.AddReceivedDataListener(SetBarHeight);
+		MQTT_Client.NetworkManager.AddReceivedDataListener(ProcessData);
 	}
 }

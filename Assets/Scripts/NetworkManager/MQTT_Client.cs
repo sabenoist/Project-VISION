@@ -3,6 +3,7 @@ using uPLibrary.Networking.M2Mqtt.Messages;
 using M2MqttUnity;
 using System;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 /// <summary>
 /// Subclass of the library <see cref="M2MqttUnityClient"/> to handle our connection to the MQTT broker.
@@ -32,7 +33,7 @@ public class MQTT_Client : M2MqttUnityClient
     /// <summary>
     /// Event to trigger when data has been received.
     /// </summary>
-    private event Action<Microphone, float> ReceivedData;
+    private event Action<Dictionary<string, string>> ReceivedData;
 
     /// <summary>
     /// Static reference to this object for other classes to call upon.
@@ -43,7 +44,7 @@ public class MQTT_Client : M2MqttUnityClient
     /// Adds a listener for when <see cref="ReceivedData"/> gets invoked.
     /// </summary>
     /// <param name="listener">The listener to be added.</param>
-    public void AddReceivedDataListener(Action<Microphone, float> listener) {
+    public void AddReceivedDataListener(Action<Dictionary<string, string>> listener) {
         ReceivedData += listener;
     }
 
@@ -51,7 +52,7 @@ public class MQTT_Client : M2MqttUnityClient
     /// Removes a listener for when <see cref="ReceivedData"/> gets invoked.
     /// </summary>
     /// <param name="listener">The listener to be added.</param>
-    public void RemoveReceivedDataListener(Action<Microphone, float> listener) {
+    public void RemoveReceivedDataListener(Action<Dictionary<string, string>> listener) {
         ReceivedData -= listener;
     }
 
@@ -91,11 +92,6 @@ public class MQTT_Client : M2MqttUnityClient
             client.Subscribe(new string[] { topic }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
             Debug.Log("Subscribed to topic: " + topic + "\n");
         }
-        //client.Subscribe(new string[] { "0" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
-        //client.Subscribe(new string[] { "1" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
-        //client.Subscribe(new string[] { "2" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
-        //client.Subscribe(new string[] { "3" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
-        //client.Subscribe(new string[] { "sensor" }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
     }
 
     /// <summary>
@@ -106,11 +102,6 @@ public class MQTT_Client : M2MqttUnityClient
         foreach (string topic in topics) {
             client.Unsubscribe(new string[] { topic });
         }
-        //client.Unsubscribe(new string[] { "0" });
-        //client.Unsubscribe(new string[] { "1" });
-        //client.Unsubscribe(new string[] { "2" });
-        //client.Unsubscribe(new string[] { "3" });
-        //client.Unsubscribe(new string[] { "sensor" });
     }
 
     /// <summary>
@@ -129,15 +120,24 @@ public class MQTT_Client : M2MqttUnityClient
     /// <param name="message">The message attached to the MQTT packet.</param>
     protected override void DecodeMessage(string topic, byte[] message)
     {
+        Dictionary<string, string> decodedMsg = new Dictionary<string, string>();
+
         string msg = System.Text.Encoding.UTF8.GetString(message);
+        msg = msg.Substring(1, msg.Length - 2);
+
+        string[] msgSplit = msg.Split(',');
+        foreach (string msgData in msgSplit)
+        {
+            string[] dataSplit = msgData.Split(':');
+            decodedMsg.Add(dataSplit[0].Trim('"'), dataSplit[1].Trim('"'));
+        }
 
         if (verboseLogging) 
         {
             Debug.Log("Topic: " + topic + " ~ Received: " + msg + "\n");
         }
 
-        //TODO: rewrite
-        //ReceivedData?.Invoke((Microphone)int.Parse(topic), float.Parse(msg));
+        ReceivedData?.Invoke(decodedMsg);
     }
 
     /// <summary>
