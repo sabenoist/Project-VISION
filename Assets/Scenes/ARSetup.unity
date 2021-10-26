@@ -371,7 +371,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1633744893996995390, guid: 0f11474236ae6f143a5019796ae1fd22, type: 3}
       propertyPath: brokerAddress
-      value: hermes
+      value: MacBook-Pro-som-tillhor-Emma
       objectReference: {fileID: 0}
     - target: {fileID: 1633744893996995390, guid: 0f11474236ae6f143a5019796ae1fd22, type: 3}
       propertyPath: connectionStatus
