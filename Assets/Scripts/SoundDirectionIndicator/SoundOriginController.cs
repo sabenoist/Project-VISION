@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class SoundOriginController : MonoBehaviour
 {
+	public Transform userTransform;
 	public GameObject soundOriginPrefab;
 
 	public void CreateSoundOrigin(Dictionary<string, string> data) {
 		GameObject soundOrigin = Instantiate(soundOriginPrefab);
 		IndicatorRegister indicatorRegister = soundOrigin.GetComponent<IndicatorRegister>();
 		indicatorRegister.SetData(float.Parse(data["decibels"]), int.Parse(data["pitch"]), float.Parse(data["timeperiod"]));
+
+		Vector3 newPosition = new Vector3(userTransform.position.x, userTransform.position.y, userTransform.position.z);
+		soundOrigin.transform.position = newPosition;
+		soundOrigin.transform.Translate(float.Parse(data["distance"]) * Mathf.Cos(Mathf.PI / 180 * float.Parse(data["direction"])), 1, float.Parse(data["distance"]) * Mathf.Sin(Mathf.PI / 180 * float.Parse(data["direction"])), 0f);
+
+		indicatorRegister.Register();
 	}
 
 	/// <summary>
