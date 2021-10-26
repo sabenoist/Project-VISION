@@ -6,11 +6,11 @@ public class IndicatorRegister : MonoBehaviour
 {
     [Range(5, 30)]
     [SerializeField] 
-    float destroyTimer = 15.0f;
+    private float destroyTimer = 15.0f;
     [SerializeField]
-    float amplitude = 10.0f;
+    private float amplitude = 10.0f;
     [SerializeField]
-    int pitch = 1;
+    private int pitch = 1;
 
     void OnEnable()
     {
