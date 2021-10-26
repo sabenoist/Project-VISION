@@ -5,5 +5,6 @@ using UnityEngine;
 [System.Serializable]
 public enum SceneName
 {
-    USER_INTERFACE
+    USER_INTERFACE,
+    IPAD
 }
