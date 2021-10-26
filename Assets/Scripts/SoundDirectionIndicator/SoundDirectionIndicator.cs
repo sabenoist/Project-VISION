@@ -141,7 +141,7 @@ public class SoundDirectionIndicator : MonoBehaviour
         if (pitch ==2)
         {
             circleVisualizer = Instantiate(circleRed, targetPosition, Quaternion.identity) as GameObject;
-            circleVisualizer.transform.SetParent(GameObject.FindGameObjectWithTag("SoundDirectionCanvas").transform, false);
+            circleVisualizer.transform.SetParent(GameObject.FindGameObjectWithTag("SoundDirectionHolder").transform, false);
             Vector3 newSize = circleRed.GetComponent<Transform>().localScale;
             //change size of the circle based on the  spectrumData
             newSize.y = amplitude* (float)0.05;
@@ -151,7 +151,7 @@ public class SoundDirectionIndicator : MonoBehaviour
         else if (pitch ==1)
         {
             circleVisualizer = Instantiate(circleBlue, targetPosition, Quaternion.identity) as GameObject;
-            circleVisualizer.transform.SetParent(GameObject.FindGameObjectWithTag("SoundDirectionCanvas").transform, false);
+            circleVisualizer.transform.SetParent(GameObject.FindGameObjectWithTag("SoundDirectionHolder").transform, false);
             Vector3 newSize = circleBlue.GetComponent<Transform>().localScale;
             //change size of the circle based on the  spectrumData
             newSize.y = amplitude * (float)0.05;
@@ -161,7 +161,7 @@ public class SoundDirectionIndicator : MonoBehaviour
         else if (pitch ==0)
         {
             circleVisualizer = Instantiate(circleGreen, targetPosition, Quaternion.identity) as GameObject;
-            circleVisualizer.transform.SetParent(GameObject.FindGameObjectWithTag("SoundDirectionCanvas").transform, false);
+            circleVisualizer.transform.SetParent(GameObject.FindGameObjectWithTag("SoundDirectionHolder").transform, false);
             Vector3 newSize = circleGreen.GetComponent<Transform>().localScale;
             //change size of the circle based on the  spectrumData
             newSize.y = amplitude * (float)0.05;
