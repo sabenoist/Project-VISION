@@ -570,6 +570,11 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 2377997982202598237, guid: 1a2be6bf74e34f74ab2200ec6b27d503, type: 3}
   m_PrefabInstance: {fileID: 4809669456331428799}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &4809669456331428802 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4854553390761463411, guid: 1a2be6bf74e34f74ab2200ec6b27d503, type: 3}
+  m_PrefabInstance: {fileID: 4809669456331428799}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8006347251384579955
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -644,4 +649,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d654c5a4aa7dc44458aa3b751574d459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  userTransform: {fileID: 4809669456331428802}
   soundOriginPrefab: {fileID: 5654983530879845300, guid: 9177590429e76654290668d9581b3627, type: 3}
