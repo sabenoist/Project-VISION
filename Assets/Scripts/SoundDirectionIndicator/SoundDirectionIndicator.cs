@@ -61,7 +61,7 @@ public class SoundDirectionIndicator : MonoBehaviour
     private float amplitude;//to be received from the server
     private int pitch; //array of pitch to be received from servcer
 
-    public GameObject circleVisualizer;
+    private GameObject circleVisualizer;
 
     public void Register(Transform target, Transform player, Action unRegister, float amplitude, int pitch)
     {
