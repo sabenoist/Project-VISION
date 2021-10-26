@@ -110,7 +110,6 @@ public class CircleAnimation : MonoBehaviour
 	//slowly fade out the circle
 	IEnumerator FadeOutMaterial(float fadeSpeed, GameObject circle)
 	{
-
 		RawImage image = circle.transform.GetComponent<RawImage>();
 		Color oldColor = image.color;
 		float alphaValue = image.color.a;
