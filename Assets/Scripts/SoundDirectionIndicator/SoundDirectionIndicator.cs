@@ -61,6 +61,8 @@ public class SoundDirectionIndicator : MonoBehaviour
     private float amplitude;//to be received from the server
     private int pitch; //array of pitch to be received from servcer
 
+    public GameObject circleVisualizer;
+
     public void Register(Transform target, Transform player, Action unRegister, float amplitude, int pitch)
     {
         this.amplitude = amplitude;
@@ -136,6 +138,32 @@ public class SoundDirectionIndicator : MonoBehaviour
     }
 
     private void VisualizeCircle(float amplitude, int pitch) {
-
+        if (pitch ==2)
+        {
+            circleVisualizer = Instantiate(circleRed, targetPosition, Quaternion.identity) as GameObject;
+            Vector3 newSize = circleRed.GetComponent<Transform>().localScale;
+            //change size of the circle based on the  spectrumData
+            newSize.y = amplitude* (float)0.05;
+            newSize.x = amplitude* (float)0.05;
+            circleRed.GetComponent<Transform>().localScale = newSize;
+        }
+        else if (pitch ==1)
+        {
+            circleVisualizer = Instantiate(circleBlue, targetPosition, Quaternion.identity) as GameObject;
+            Vector3 newSize = circleBlue.GetComponent<Transform>().localScale;
+            //change size of the circle based on the  spectrumData
+            newSize.y = amplitude * (float)0.05;
+            newSize.x = amplitude * (float)0.05;
+            circleBlue.GetComponent<Transform>().localScale = newSize;
+        }
+        else if (pitch ==0)
+        {
+            circleVisualizer = Instantiate(circleGreen, targetPosition, Quaternion.identity) as GameObject;
+            Vector3 newSize = circleGreen.GetComponent<Transform>().localScale;
+            //change size of the circle based on the  spectrumData
+            newSize.y = amplitude * (float)0.05;
+            newSize.x = amplitude * (float)0.05;
+            circleGreen.GetComponent<Transform>().localScale = newSize;
+        }
     }
 }
