@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6013707129432490183}
   m_Layer: 5
   m_Name: SoundDirectionHolder
-  m_TagString: Untagged
+  m_TagString: SoundDirectionHolder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
