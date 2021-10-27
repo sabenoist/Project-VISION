@@ -143,31 +143,31 @@ public class SoundDirectionIndicator : MonoBehaviour
             circleVisualizer = Instantiate(circleGreen, transform.position, transform.rotation) as GameObject;
             circleVisualizer.transform.SetParent(GameObject.FindGameObjectWithTag("Pointer").transform, false);
             circleVisualizer.transform.position = GameObject.FindGameObjectWithTag("Pointer").transform.position;
-            Vector3 newSize = circleGreen.GetComponent<Transform>().localScale;
+            Vector3 newSize = circleVisualizer.GetComponent<Transform>().localScale;
             //change size of the circle based on the  spectrumData
             newSize.y = amplitude * amplitudeScalar;
             newSize.x = amplitude * amplitudeScalar;
-            circleGreen.GetComponent<Transform>().localScale = newSize;
+            circleVisualizer.GetComponent<Transform>().localScale = newSize;
 
             if (pitch >= 1) {
                 circleVisualizer = Instantiate(circleBlue, transform.position, transform.rotation) as GameObject;
                 circleVisualizer.transform.SetParent(GameObject.FindGameObjectWithTag("Pointer").transform, false);
                 circleVisualizer.transform.position = GameObject.FindGameObjectWithTag("Pointer").transform.position;
-                Vector3 newSizeMedium = circleBlue.GetComponent<Transform>().localScale;
+                Vector3 newSizeMedium = circleVisualizer.GetComponent<Transform>().localScale;
                 //change size of the circle based on the  spectrumData
-                newSizeMedium.y = amplitude * (amplitudeScalar + 0.10f);
-                newSizeMedium.x = amplitude * (amplitudeScalar + 0.10f);
-                circleBlue.GetComponent<Transform>().localScale = newSizeMedium;
+                newSizeMedium.y = amplitude * (amplitudeScalar + 0.025f);
+                newSizeMedium.x = amplitude * (amplitudeScalar + 0.025f);
+                circleVisualizer.GetComponent<Transform>().localScale = newSizeMedium;
 
                 if (pitch >= 2) {
                     circleVisualizer = Instantiate(circleRed, transform.position, transform.rotation) as GameObject;
                     circleVisualizer.transform.SetParent(GameObject.FindGameObjectWithTag("Pointer").transform, false);
                     circleVisualizer.transform.position = GameObject.FindGameObjectWithTag("Pointer").transform.position;
-                    Vector3 newSizeHigh = circleRed.GetComponent<Transform>().localScale;
+                    Vector3 newSizeHigh = circleVisualizer.GetComponent<Transform>().localScale;
                     //change size of the circle based on the  spectrumData
-                    newSizeHigh.y = amplitude * (amplitudeScalar + 0.20f);
-                    newSizeHigh.x = amplitude * (amplitudeScalar + 0.20f);
-                    circleRed.GetComponent<Transform>().localScale = newSizeHigh;
+                    newSizeHigh.y = amplitude * (amplitudeScalar + 0.05f);
+                    newSizeHigh.x = amplitude * (amplitudeScalar + 0.05f);
+                    circleVisualizer.GetComponent<Transform>().localScale = newSizeHigh;
                 }
             }
         }

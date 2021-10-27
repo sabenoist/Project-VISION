@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9339623, g: 0.5973456, b: 0, a: 1}
+  m_Color: {r: 0.9339623, g: 0.5973456, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -140,3 +140,4 @@ MonoBehaviour:
   circleRed: {fileID: 2340525028221263770, guid: 8a054ecde8a33e24f92720d21c74edca, type: 3}
   circleBlue: {fileID: 503721512120199873, guid: db8d60687079c6846b194e67d69e0980, type: 3}
   circleGreen: {fileID: 3026150641262290654, guid: 65044b099267d2c438e8ea08267c7cdc, type: 3}
+  amplitudeScalar: 0.05
