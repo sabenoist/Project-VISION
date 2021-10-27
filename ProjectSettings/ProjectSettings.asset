@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: ProjectVisionCo
   productName: Project_VISION
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -155,7 +155,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.DefaultCompany.Project_VISION
     Standalone: com.DefaultCompany.ProjectVISION
-    iPhone: com.DefaultCompany.ProjectVISION
+    iPhone: com.ProjectVisionCo.ProjectVISION
   buildNumber:
     Standalone: 0
     iPhone: 0
