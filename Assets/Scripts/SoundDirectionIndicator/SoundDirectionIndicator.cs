@@ -141,8 +141,8 @@ public class SoundDirectionIndicator : MonoBehaviour
         if (pitch ==2)
         {
             circleVisualizer = Instantiate(circleRed, transform.position, transform.rotation) as GameObject;
-            circleVisualizer.transform.SetParent(GameObject.FindGameObjectWithTag("SoundDirectionHolder").transform, false);
-            circleVisualizer.transform.position = GameObject.FindGameObjectWithTag("SoundDirectionHolder").transform.position;
+            circleVisualizer.transform.SetParent(GameObject.FindGameObjectWithTag("Pointer").transform, false);
+            circleVisualizer.transform.position = GameObject.FindGameObjectWithTag("Pointer").transform.position;
             Vector3 newSize = circleRed.GetComponent<Transform>().localScale;
             //change size of the circle based on the  spectrumData
             newSize.y = amplitude* (float)0.05;
@@ -152,8 +152,8 @@ public class SoundDirectionIndicator : MonoBehaviour
         else if (pitch ==1)
         {
             circleVisualizer = Instantiate(circleBlue, transform.position, transform.rotation) as GameObject;
-            circleVisualizer.transform.SetParent(GameObject.FindGameObjectWithTag("SoundDirectionHolder").transform, false);
-            circleVisualizer.transform.position = GameObject.FindGameObjectWithTag("SoundDirectionHolder").transform.position;
+            circleVisualizer.transform.SetParent(GameObject.FindGameObjectWithTag("Pointer").transform, false);
+            circleVisualizer.transform.position = GameObject.FindGameObjectWithTag("Pointer").transform.position;
             Vector3 newSize = circleBlue.GetComponent<Transform>().localScale;
             //change size of the circle based on the  spectrumData
             newSize.y = amplitude * (float)0.05;
@@ -163,8 +163,8 @@ public class SoundDirectionIndicator : MonoBehaviour
         else if (pitch ==0)
         {
             circleVisualizer = Instantiate(circleGreen, transform.position, transform.rotation) as GameObject;
-            circleVisualizer.transform.SetParent(GameObject.FindGameObjectWithTag("SoundDirectionHolder").transform, false);
-            circleVisualizer.transform.position = GameObject.FindGameObjectWithTag("SoundDirectionHolder").transform.position;
+            circleVisualizer.transform.SetParent(GameObject.FindGameObjectWithTag("Pointer").transform, false);
+            circleVisualizer.transform.position = GameObject.FindGameObjectWithTag("Pointer").transform.position;
             Vector3 newSize = circleGreen.GetComponent<Transform>().localScale;
             //change size of the circle based on the  spectrumData
             newSize.y = amplitude * (float)0.05;
