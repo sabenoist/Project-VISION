@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.3587269, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -437,6 +437,10 @@ PrefabInstance:
     - target: {fileID: 1633744893996995390, guid: 0f11474236ae6f143a5019796ae1fd22, type: 3}
       propertyPath: brokerAddress
       value: 172.20.10.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1633744893996995390, guid: 0f11474236ae6f143a5019796ae1fd22, type: 3}
+      propertyPath: verboseLogging
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1633744893996995390, guid: 0f11474236ae6f143a5019796ae1fd22, type: 3}
       propertyPath: connectionStatus

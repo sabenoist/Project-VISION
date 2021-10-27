@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.3587269, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -337,7 +337,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6504621702550809191, guid: 841c73e85c6b9644f88911785306d07d, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6504621702550809191, guid: 841c73e85c6b9644f88911785306d07d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -413,7 +413,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2011463932177969620, guid: 1a2be6bf74e34f74ab2200ec6b27d503, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2011463932177969620, guid: 1a2be6bf74e34f74ab2200ec6b27d503, type: 3}
       propertyPath: m_LocalPosition.x
@@ -493,7 +493,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 584943284786278918, guid: a6e0b77c2a9db09458d441ec6615e7d9, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 584943284786278918, guid: a6e0b77c2a9db09458d441ec6615e7d9, type: 3}
       propertyPath: m_AnchorMax.x
@@ -517,6 +517,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 584943284786278918, guid: a6e0b77c2a9db09458d441ec6615e7d9, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 584943284786278918, guid: a6e0b77c2a9db09458d441ec6615e7d9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 584943284786278918, guid: a6e0b77c2a9db09458d441ec6615e7d9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 584943284786278918, guid: a6e0b77c2a9db09458d441ec6615e7d9, type: 3}
+      propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 584943284786278918, guid: a6e0b77c2a9db09458d441ec6615e7d9, type: 3}
@@ -571,6 +583,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 5940194469722892460, guid: a6e0b77c2a9db09458d441ec6615e7d9, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6002345890375698628, guid: a6e0b77c2a9db09458d441ec6615e7d9, type: 3}
       propertyPath: camera
       value: 
@@ -579,6 +595,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1159372135}
+    - target: {fileID: 6225168783294494845, guid: a6e0b77c2a9db09458d441ec6615e7d9, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1159372136}
+    - target: {fileID: 6225168783294494845, guid: a6e0b77c2a9db09458d441ec6615e7d9, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225168783294494845, guid: a6e0b77c2a9db09458d441ec6615e7d9, type: 3}
+      propertyPath: m_PixelPerfect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8009864469924293500, guid: a6e0b77c2a9db09458d441ec6615e7d9, type: 3}
       propertyPath: m_Name
       value: SoundDirectionCanvas
