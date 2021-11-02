@@ -137,7 +137,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08f270441af6d08478274912996f517b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circleRed: {fileID: 2340525028221263770, guid: 8a054ecde8a33e24f92720d21c74edca, type: 3}
-  circleBlue: {fileID: 503721512120199873, guid: db8d60687079c6846b194e67d69e0980, type: 3}
-  circleGreen: {fileID: 3026150641262290654, guid: 65044b099267d2c438e8ea08267c7cdc, type: 3}
+  arrowIndicator: {fileID: 503721512120199873, guid: db8d60687079c6846b194e67d69e0980, type: 3}
+  circleIndicator: {fileID: 3026150641262290654, guid: 65044b099267d2c438e8ea08267c7cdc, type: 3}
   amplitudeScalar: 0.05
