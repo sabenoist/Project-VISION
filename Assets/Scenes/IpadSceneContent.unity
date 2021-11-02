@@ -595,6 +595,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1159372135}
+    - target: {fileID: 6013707129432490183, guid: a6e0b77c2a9db09458d441ec6615e7d9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6013707129432490183, guid: a6e0b77c2a9db09458d441ec6615e7d9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6225168783294494845, guid: a6e0b77c2a9db09458d441ec6615e7d9, type: 3}
       propertyPath: m_Camera
       value: 
