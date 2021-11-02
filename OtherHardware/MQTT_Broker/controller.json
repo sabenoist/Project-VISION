@@ -1,1 +1,731 @@
-[{"id":"92d2b552.988878","type":"tab","label":"Project-VISION-Controller","disabled":false,"info":""},{"id":"6f751565.b9d02c","type":"ui_slider","z":"92d2b552.988878","name":"","label":"1. Decibels","tooltip":"","group":"f417350d.ab99f8","order":5,"width":0,"height":0,"passthru":true,"outs":"end","topic":"decibels","min":"70","max":"160","step":1,"x":570,"y":360,"wires":[["8f950323.2a872"]]},{"id":"1bc8dcac.1aa253","type":"ui_dropdown","z":"92d2b552.988878","name":"","label":"1. Pitch","tooltip":"","place":"Select option","group":"f417350d.ab99f8","order":1,"width":0,"height":0,"passthru":true,"multiple":false,"options":[{"label":"Low","value":"0","type":"str"},{"label":"Medium","value":"1","type":"str"},{"label":"High","value":"2","type":"str"}],"payload":"","topic":"pitch","x":580,"y":400,"wires":[["8f950323.2a872"]]},{"id":"d0424e66.70e1c","type":"ui_colour_picker","z":"92d2b552.988878","name":"","label":"1. Timbre","group":"f417350d.ab99f8","format":"hex","outformat":"string","showSwatch":true,"showPicker":false,"showValue":false,"showHue":true,"showAlpha":false,"showLightness":false,"square":"true","dynOutput":"false","order":2,"width":0,"height":0,"passthru":true,"topic":"timbre","x":580,"y":440,"wires":[["8f950323.2a872"]]},{"id":"661c1951.1a56b8","type":"ui_slider","z":"92d2b552.988878","name":"","label":"1. Direction","tooltip":"","group":"f417350d.ab99f8","order":3,"width":0,"height":0,"passthru":true,"outs":"end","topic":"direction","min":0,"max":"360","step":1,"x":570,"y":480,"wires":[["8f950323.2a872"]]},{"id":"feb3b207.9da5d","type":"ui_slider","z":"92d2b552.988878","name":"","label":"1. Frequency","tooltip":"","group":"f417350d.ab99f8","order":6,"width":0,"height":0,"passthru":true,"outs":"end","topic":"frequency","min":"20","max":"20000","step":1,"x":570,"y":320,"wires":[["8f950323.2a872"]]},{"id":"6508b165.bcf18","type":"ui_slider","z":"92d2b552.988878","name":"","label":"1. Distance","tooltip":"","group":"f417350d.ab99f8","order":4,"width":0,"height":0,"passthru":true,"outs":"end","topic":"distance","min":"1","max":10,"step":1,"x":570,"y":520,"wires":[["8f950323.2a872"]]},{"id":"f417af3e.07505","type":"ui_button","z":"92d2b552.988878","name":"1. Send","group":"f417350d.ab99f8","order":8,"width":0,"height":0,"passthru":false,"label":"Send","tooltip":"","color":"","bgcolor":"","icon":"","payload":"1","payloadType":"str","topic":"button","x":580,"y":280,"wires":[["8f950323.2a872"]]},{"id":"8f950323.2a872","type":"join","z":"92d2b552.988878","name":"","mode":"custom","build":"object","property":"payload","propertyType":"msg","key":"topic","joiner":"\\n","joinerType":"str","accumulate":true,"timeout":"","count":"1","reduceRight":false,"reduceExp":"","reduceInit":"","reduceInitType":"","reduceFixup":"","x":920,"y":400,"wires":[["259216a1.38903a"]]},{"id":"259216a1.38903a","type":"mqtt out","z":"92d2b552.988878","name":"","topic":"sensor","qos":"","retain":"","broker":"a9b999e7.2a3078","x":1150,"y":400,"wires":[]},{"id":"ac3cab4c.f38978","type":"ui_slider","z":"92d2b552.988878","name":"","label":"2. Decibels","tooltip":"","group":"ff6e1064.e8e84","order":5,"width":0,"height":0,"passthru":true,"outs":"end","topic":"decibels","min":"70","max":"160","step":1,"x":570,"y":720,"wires":[["2ee6f480.77459c"]]},{"id":"adfa4001.2a1cd","type":"ui_dropdown","z":"92d2b552.988878","name":"","label":"2. Pitch","tooltip":"","place":"Select option","group":"ff6e1064.e8e84","order":1,"width":0,"height":0,"passthru":true,"multiple":false,"options":[{"label":"Low","value":"0","type":"str"},{"label":"Medium","value":"1","type":"str"},{"label":"High","value":"2","type":"str"}],"payload":"","topic":"pitch","x":580,"y":760,"wires":[["2ee6f480.77459c"]]},{"id":"4d72a0b.1eabe6","type":"ui_colour_picker","z":"92d2b552.988878","name":"","label":"2. Timbre","group":"ff6e1064.e8e84","format":"hex","outformat":"string","showSwatch":true,"showPicker":false,"showValue":false,"showHue":true,"showAlpha":false,"showLightness":false,"square":"true","dynOutput":"false","order":2,"width":0,"height":0,"passthru":true,"topic":"timbre","x":580,"y":800,"wires":[["2ee6f480.77459c"]]},{"id":"ef27368c.24e8e8","type":"ui_slider","z":"92d2b552.988878","name":"","label":"2. Direction","tooltip":"","group":"ff6e1064.e8e84","order":3,"width":0,"height":0,"passthru":true,"outs":"end","topic":"direction","min":0,"max":"360","step":1,"x":570,"y":840,"wires":[["2ee6f480.77459c"]]},{"id":"571ed77a.865d98","type":"ui_slider","z":"92d2b552.988878","name":"","label":"2. Frequency","tooltip":"","group":"ff6e1064.e8e84","order":6,"width":0,"height":0,"passthru":true,"outs":"end","topic":"frequency","min":"20","max":"20000","step":1,"x":570,"y":680,"wires":[["2ee6f480.77459c"]]},{"id":"bd61ee0a.f345f","type":"ui_slider","z":"92d2b552.988878","name":"","label":"2. Distance","tooltip":"","group":"ff6e1064.e8e84","order":4,"width":0,"height":0,"passthru":true,"outs":"end","topic":"distance","min":"1","max":10,"step":1,"x":570,"y":880,"wires":[["2ee6f480.77459c"]]},{"id":"ac54048c.aa3dc8","type":"ui_button","z":"92d2b552.988878","name":"2. Send","group":"ff6e1064.e8e84","order":8,"width":0,"height":0,"passthru":false,"label":"Send","tooltip":"","color":"","bgcolor":"","icon":"","payload":"2","payloadType":"str","topic":"button","x":580,"y":640,"wires":[["2ee6f480.77459c"]]},{"id":"2ee6f480.77459c","type":"join","z":"92d2b552.988878","name":"","mode":"custom","build":"object","property":"payload","propertyType":"msg","key":"topic","joiner":"\\n","joinerType":"str","accumulate":true,"timeout":"","count":"1","reduceRight":false,"reduceExp":"","reduceInit":"","reduceInitType":"","reduceFixup":"","x":920,"y":760,"wires":[["429384c1.3ee7ac"]]},{"id":"429384c1.3ee7ac","type":"mqtt out","z":"92d2b552.988878","name":"","topic":"sensor","qos":"","retain":"","broker":"a9b999e7.2a3078","x":1150,"y":760,"wires":[]},{"id":"5e7323f1.89244c","type":"ui_slider","z":"92d2b552.988878","name":"","label":"3. Decibels","tooltip":"","group":"e528f548.8ae388","order":5,"width":0,"height":0,"passthru":true,"outs":"end","topic":"decibels","min":"70","max":"160","step":1,"x":570,"y":1080,"wires":[["9a84b11d.7dcbc"]]},{"id":"2620038c.e508ec","type":"ui_dropdown","z":"92d2b552.988878","name":"","label":"3. Pitch","tooltip":"","place":"Select option","group":"e528f548.8ae388","order":1,"width":0,"height":0,"passthru":true,"multiple":false,"options":[{"label":"Low","value":"0","type":"str"},{"label":"Medium","value":"1","type":"str"},{"label":"High","value":"2","type":"str"}],"payload":"","topic":"pitch","x":580,"y":1120,"wires":[["9a84b11d.7dcbc"]]},{"id":"139354d8.6cfdbb","type":"ui_colour_picker","z":"92d2b552.988878","name":"","label":"3. Timbre","group":"e528f548.8ae388","format":"hex","outformat":"string","showSwatch":true,"showPicker":false,"showValue":false,"showHue":true,"showAlpha":false,"showLightness":false,"square":"true","dynOutput":"false","order":2,"width":0,"height":0,"passthru":true,"topic":"timbre","x":580,"y":1160,"wires":[["9a84b11d.7dcbc"]]},{"id":"18f41a5b.75bb96","type":"ui_slider","z":"92d2b552.988878","name":"","label":"3. Direction","tooltip":"","group":"e528f548.8ae388","order":3,"width":0,"height":0,"passthru":true,"outs":"end","topic":"direction","min":0,"max":"360","step":1,"x":570,"y":1200,"wires":[["9a84b11d.7dcbc"]]},{"id":"8bc6d901.b75d98","type":"ui_slider","z":"92d2b552.988878","name":"","label":"3. Frequency","tooltip":"","group":"e528f548.8ae388","order":6,"width":0,"height":0,"passthru":true,"outs":"end","topic":"frequency","min":"20","max":"20000","step":1,"x":570,"y":1040,"wires":[["9a84b11d.7dcbc"]]},{"id":"8efaec3c.01d2c","type":"ui_slider","z":"92d2b552.988878","name":"","label":"3. Distance","tooltip":"","group":"e528f548.8ae388","order":4,"width":0,"height":0,"passthru":true,"outs":"end","topic":"distance","min":"1","max":10,"step":1,"x":570,"y":1240,"wires":[["9a84b11d.7dcbc"]]},{"id":"9af27f40.019ef","type":"ui_button","z":"92d2b552.988878","name":"3. Send","group":"e528f548.8ae388","order":8,"width":0,"height":0,"passthru":false,"label":"Send","tooltip":"","color":"","bgcolor":"","icon":"","payload":"3","payloadType":"str","topic":"button","x":580,"y":1000,"wires":[["9a84b11d.7dcbc"]]},{"id":"9a84b11d.7dcbc","type":"join","z":"92d2b552.988878","name":"","mode":"custom","build":"object","property":"payload","propertyType":"msg","key":"topic","joiner":"\\n","joinerType":"str","accumulate":true,"timeout":"","count":"1","reduceRight":false,"reduceExp":"","reduceInit":"","reduceInitType":"","reduceFixup":"","x":920,"y":1120,"wires":[["a7df774f.ab9368"]]},{"id":"a7df774f.ab9368","type":"mqtt out","z":"92d2b552.988878","name":"","topic":"sensor","qos":"","retain":"","broker":"a9b999e7.2a3078","x":1150,"y":1120,"wires":[]},{"id":"f7341292.23c02","type":"ui_numeric","z":"92d2b552.988878","name":"","label":"1. Time Period","tooltip":"","group":"f417350d.ab99f8","order":7,"width":0,"height":0,"wrap":false,"passthru":true,"topic":"timeperiod","format":"{{value}}","min":0,"max":10,"step":1,"x":560,"y":560,"wires":[["8f950323.2a872"]]},{"id":"eb1c3326.b9193","type":"ui_numeric","z":"92d2b552.988878","name":"","label":"2. Time Period","tooltip":"","group":"ff6e1064.e8e84","order":7,"width":0,"height":0,"wrap":false,"passthru":true,"topic":"timeperiod","format":"{{value}}","min":0,"max":10,"step":1,"x":560,"y":920,"wires":[["2ee6f480.77459c"]]},{"id":"74bbcfd.28e063","type":"ui_numeric","z":"92d2b552.988878","name":"","label":"3. Time Period","tooltip":"","group":"e528f548.8ae388","order":7,"width":0,"height":0,"wrap":false,"passthru":true,"topic":"timeperiod","format":"{{value}}","min":0,"max":10,"step":1,"x":560,"y":1280,"wires":[["9a84b11d.7dcbc"]]},{"id":"f417350d.ab99f8","type":"ui_group","name":"Input 1","tab":"fc603201.6709f","order":1,"disp":true,"width":"6","collapse":false},{"id":"a9b999e7.2a3078","type":"mqtt-broker","name":"MQTT Broker","broker":"localhost","port":"1883","clientid":"","usetls":false,"compatmode":false,"keepalive":"60","cleansession":true,"birthTopic":"","birthQos":"0","birthPayload":"","closeTopic":"","closeQos":"0","closePayload":"","willTopic":"","willQos":"0","willPayload":""},{"id":"ff6e1064.e8e84","type":"ui_group","name":"Input 2","tab":"fc603201.6709f","order":2,"disp":true,"width":"6","collapse":false},{"id":"e528f548.8ae388","type":"ui_group","name":"Input 3","tab":"fc603201.6709f","order":3,"disp":true,"width":"6","collapse":false},{"id":"fc603201.6709f","type":"ui_tab","name":"Project-VISION-Controller","icon":"dashboard","disabled":false,"hidden":false}]
+[
+    {
+        "id": "92d2b552.988878",
+        "type": "tab",
+        "label": "Project-VISION-Controller",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "8f950323.2a872",
+        "type": "join",
+        "z": "92d2b552.988878",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "1",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 920,
+        "y": 400,
+        "wires": [
+            [
+                "259216a1.38903a"
+            ]
+        ]
+    },
+    {
+        "id": "259216a1.38903a",
+        "type": "mqtt out",
+        "z": "92d2b552.988878",
+        "name": "",
+        "topic": "sensor",
+        "qos": "",
+        "retain": "",
+        "broker": "a9b999e7.2a3078",
+        "x": 1150,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "2ee6f480.77459c",
+        "type": "join",
+        "z": "92d2b552.988878",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "1",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 910,
+        "y": 680,
+        "wires": [
+            [
+                "429384c1.3ee7ac"
+            ]
+        ]
+    },
+    {
+        "id": "429384c1.3ee7ac",
+        "type": "mqtt out",
+        "z": "92d2b552.988878",
+        "name": "",
+        "topic": "sensor",
+        "qos": "",
+        "retain": "",
+        "broker": "a9b999e7.2a3078",
+        "x": 1140,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "9a84b11d.7dcbc",
+        "type": "join",
+        "z": "92d2b552.988878",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "1",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 910,
+        "y": 960,
+        "wires": [
+            [
+                "a7df774f.ab9368"
+            ]
+        ]
+    },
+    {
+        "id": "a7df774f.ab9368",
+        "type": "mqtt out",
+        "z": "92d2b552.988878",
+        "name": "",
+        "topic": "sensor",
+        "qos": "",
+        "retain": "",
+        "broker": "a9b999e7.2a3078",
+        "x": 1140,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "f417af3e.07505",
+        "type": "ui_button",
+        "z": "92d2b552.988878",
+        "name": "1. Send",
+        "group": "f417350d.ab99f8",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Send",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "str",
+        "topic": "button",
+        "topicType": "str",
+        "x": 580,
+        "y": 280,
+        "wires": [
+            [
+                "8f950323.2a872"
+            ]
+        ]
+    },
+    {
+        "id": "ac54048c.aa3dc8",
+        "type": "ui_button",
+        "z": "92d2b552.988878",
+        "name": "2. Send",
+        "group": "ff6e1064.e8e84",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Send",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "2",
+        "payloadType": "str",
+        "topic": "button",
+        "topicType": "str",
+        "x": 570,
+        "y": 560,
+        "wires": [
+            [
+                "2ee6f480.77459c"
+            ]
+        ]
+    },
+    {
+        "id": "9af27f40.019ef",
+        "type": "ui_button",
+        "z": "92d2b552.988878",
+        "name": "3. Send",
+        "group": "e528f548.8ae388",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Send",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "3",
+        "payloadType": "str",
+        "topic": "button",
+        "topicType": "str",
+        "x": 570,
+        "y": 840,
+        "wires": [
+            [
+                "9a84b11d.7dcbc"
+            ]
+        ]
+    },
+    {
+        "id": "1bc8dcac.1aa253",
+        "type": "ui_dropdown",
+        "z": "92d2b552.988878",
+        "name": "",
+        "label": "1. Pitch",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "f417350d.ab99f8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Low",
+                "value": "0",
+                "type": "str"
+            },
+            {
+                "label": "Medium",
+                "value": "1",
+                "type": "str"
+            },
+            {
+                "label": "High",
+                "value": "2",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "pitch",
+        "topicType": "str",
+        "className": "",
+        "x": 580,
+        "y": 360,
+        "wires": [
+            [
+                "8f950323.2a872"
+            ]
+        ]
+    },
+    {
+        "id": "adfa4001.2a1cd",
+        "type": "ui_dropdown",
+        "z": "92d2b552.988878",
+        "name": "",
+        "label": "2. Pitch",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "ff6e1064.e8e84",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Low",
+                "value": "0",
+                "type": "str"
+            },
+            {
+                "label": "Medium",
+                "value": "1",
+                "type": "str"
+            },
+            {
+                "label": "High",
+                "value": "2",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "pitch",
+        "topicType": "str",
+        "className": "",
+        "x": 570,
+        "y": 640,
+        "wires": [
+            [
+                "2ee6f480.77459c"
+            ]
+        ]
+    },
+    {
+        "id": "2620038c.e508ec",
+        "type": "ui_dropdown",
+        "z": "92d2b552.988878",
+        "name": "",
+        "label": "3. Pitch",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "e528f548.8ae388",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Low",
+                "value": "0",
+                "type": "str"
+            },
+            {
+                "label": "Medium",
+                "value": "1",
+                "type": "str"
+            },
+            {
+                "label": "High",
+                "value": "2",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "pitch",
+        "topicType": "str",
+        "className": "",
+        "x": 570,
+        "y": 920,
+        "wires": [
+            [
+                "9a84b11d.7dcbc"
+            ]
+        ]
+    },
+    {
+        "id": "6f751565.b9d02c",
+        "type": "ui_slider",
+        "z": "92d2b552.988878",
+        "name": "",
+        "label": "1. Decibels",
+        "tooltip": "",
+        "group": "f417350d.ab99f8",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "decibels",
+        "topicType": "str",
+        "min": "70",
+        "max": "160",
+        "step": 1,
+        "className": "",
+        "x": 570,
+        "y": 320,
+        "wires": [
+            [
+                "8f950323.2a872"
+            ]
+        ]
+    },
+    {
+        "id": "661c1951.1a56b8",
+        "type": "ui_slider",
+        "z": "92d2b552.988878",
+        "name": "",
+        "label": "1. Direction",
+        "tooltip": "",
+        "group": "f417350d.ab99f8",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "direction",
+        "topicType": "str",
+        "min": 0,
+        "max": "360",
+        "step": 1,
+        "className": "",
+        "x": 570,
+        "y": 400,
+        "wires": [
+            [
+                "8f950323.2a872"
+            ]
+        ]
+    },
+    {
+        "id": "6508b165.bcf18",
+        "type": "ui_slider",
+        "z": "92d2b552.988878",
+        "name": "",
+        "label": "1. Distance",
+        "tooltip": "",
+        "group": "f417350d.ab99f8",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "distance",
+        "topicType": "str",
+        "min": "1",
+        "max": 10,
+        "step": 1,
+        "className": "",
+        "x": 570,
+        "y": 440,
+        "wires": [
+            [
+                "8f950323.2a872"
+            ]
+        ]
+    },
+    {
+        "id": "ac3cab4c.f38978",
+        "type": "ui_slider",
+        "z": "92d2b552.988878",
+        "name": "",
+        "label": "2. Decibels",
+        "tooltip": "",
+        "group": "ff6e1064.e8e84",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "decibels",
+        "topicType": "str",
+        "min": "70",
+        "max": "160",
+        "step": 1,
+        "className": "",
+        "x": 560,
+        "y": 600,
+        "wires": [
+            [
+                "2ee6f480.77459c"
+            ]
+        ]
+    },
+    {
+        "id": "ef27368c.24e8e8",
+        "type": "ui_slider",
+        "z": "92d2b552.988878",
+        "name": "",
+        "label": "2. Direction",
+        "tooltip": "",
+        "group": "ff6e1064.e8e84",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "direction",
+        "topicType": "str",
+        "min": 0,
+        "max": "360",
+        "step": 1,
+        "className": "",
+        "x": 560,
+        "y": 680,
+        "wires": [
+            [
+                "2ee6f480.77459c"
+            ]
+        ]
+    },
+    {
+        "id": "bd61ee0a.f345f",
+        "type": "ui_slider",
+        "z": "92d2b552.988878",
+        "name": "",
+        "label": "2. Distance",
+        "tooltip": "",
+        "group": "ff6e1064.e8e84",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "distance",
+        "topicType": "str",
+        "min": "1",
+        "max": 10,
+        "step": 1,
+        "className": "",
+        "x": 560,
+        "y": 720,
+        "wires": [
+            [
+                "2ee6f480.77459c"
+            ]
+        ]
+    },
+    {
+        "id": "5e7323f1.89244c",
+        "type": "ui_slider",
+        "z": "92d2b552.988878",
+        "name": "",
+        "label": "3. Decibels",
+        "tooltip": "",
+        "group": "e528f548.8ae388",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "decibels",
+        "topicType": "str",
+        "min": "70",
+        "max": "160",
+        "step": 1,
+        "className": "",
+        "x": 560,
+        "y": 880,
+        "wires": [
+            [
+                "9a84b11d.7dcbc"
+            ]
+        ]
+    },
+    {
+        "id": "18f41a5b.75bb96",
+        "type": "ui_slider",
+        "z": "92d2b552.988878",
+        "name": "",
+        "label": "3. Direction",
+        "tooltip": "",
+        "group": "e528f548.8ae388",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "direction",
+        "topicType": "str",
+        "min": 0,
+        "max": "360",
+        "step": 1,
+        "className": "",
+        "x": 560,
+        "y": 960,
+        "wires": [
+            [
+                "9a84b11d.7dcbc"
+            ]
+        ]
+    },
+    {
+        "id": "8efaec3c.01d2c",
+        "type": "ui_slider",
+        "z": "92d2b552.988878",
+        "name": "",
+        "label": "3. Distance",
+        "tooltip": "",
+        "group": "e528f548.8ae388",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "distance",
+        "topicType": "str",
+        "min": "1",
+        "max": 10,
+        "step": 1,
+        "className": "",
+        "x": 560,
+        "y": 1000,
+        "wires": [
+            [
+                "9a84b11d.7dcbc"
+            ]
+        ]
+    },
+    {
+        "id": "f7341292.23c02",
+        "type": "ui_numeric",
+        "z": "92d2b552.988878",
+        "name": "",
+        "label": "1. Time Period",
+        "tooltip": "",
+        "group": "f417350d.ab99f8",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "timeperiod",
+        "topicType": "str",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "30",
+        "step": 1,
+        "className": "",
+        "x": 560,
+        "y": 480,
+        "wires": [
+            [
+                "8f950323.2a872"
+            ]
+        ]
+    },
+    {
+        "id": "eb1c3326.b9193",
+        "type": "ui_numeric",
+        "z": "92d2b552.988878",
+        "name": "",
+        "label": "2. Time Period",
+        "tooltip": "",
+        "group": "ff6e1064.e8e84",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "timeperiod",
+        "topicType": "str",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "30",
+        "step": 1,
+        "className": "",
+        "x": 550,
+        "y": 760,
+        "wires": [
+            [
+                "2ee6f480.77459c"
+            ]
+        ]
+    },
+    {
+        "id": "74bbcfd.28e063",
+        "type": "ui_numeric",
+        "z": "92d2b552.988878",
+        "name": "",
+        "label": "3. Time Period",
+        "tooltip": "",
+        "group": "e528f548.8ae388",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "timeperiod",
+        "topicType": "str",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "30",
+        "step": 1,
+        "className": "",
+        "x": 550,
+        "y": 1040,
+        "wires": [
+            [
+                "9a84b11d.7dcbc"
+            ]
+        ]
+    },
+    {
+        "id": "a9b999e7.2a3078",
+        "type": "mqtt-broker",
+        "name": "MQTT Broker",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "f417350d.ab99f8",
+        "type": "ui_group",
+        "name": "Input 1",
+        "tab": "fc603201.6709f",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "ff6e1064.e8e84",
+        "type": "ui_group",
+        "name": "Input 2",
+        "tab": "fc603201.6709f",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "e528f548.8ae388",
+        "type": "ui_group",
+        "name": "Input 3",
+        "tab": "fc603201.6709f",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "fc603201.6709f",
+        "type": "ui_tab",
+        "name": "Project-VISION-Controller",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
