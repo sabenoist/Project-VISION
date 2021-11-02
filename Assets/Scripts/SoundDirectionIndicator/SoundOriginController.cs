@@ -20,14 +20,14 @@ public class SoundOriginController : MonoBehaviour
 		float timePeriod = getFloat(data, "timeperiod");
 		float distance = getFloat(data, "distance");
 		float direction = getFloat(data, "direction");
-		float button = getFloat(data, "button"); // i added this
+		float button = getFloat(data, "button");
 
-		if (decibels < 0 || pitch < 0 || timePeriod < 0 || distance < 0 || direction < 0) {
+		if (decibels < 0 || pitch < 0 || timePeriod < 0 || distance < 0 || direction < 0 || button < 0) {
 			Debug.Log("Incomplete data received.");
 			return;
         }
 
-		indicatorRegister.SetData(decibels, pitch, timePeriod, button); // i added button here 
+		indicatorRegister.SetData(decibels, pitch, timePeriod, button);
 
 		Vector3 newPosition = new Vector3(userTransform.position.x, userTransform.position.y, userTransform.position.z);
 		soundOrigin.transform.position = newPosition;

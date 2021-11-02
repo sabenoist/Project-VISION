@@ -58,30 +58,30 @@ public class SoundDirectionIndicator : MonoBehaviour
     public GameObject circleBlue;//blue for medium pitch
     public GameObject circleGreen;//green for low pitch
 
-    private float amplitude;//to be received from the server
+    private float amplitude;
     public float amplitudeScalar = 0.05f;
-    private int pitch; //array of pitch to be received from servcer
-    private float button; //which button that has been pressed from server, signaling which graphic should be displayed //i added this
+    private int pitch; 
+    private float button; //which button that has been pressed from server, signaling which graphic should be displayed
 
     private GameObject circleVisualizer;
 
-    public void Register(Transform target, Transform player, Action unRegister, float amplitude, int pitch, float button) // i added float button here
+    public void Register(Transform target, Transform player, Action unRegister, float amplitude, int pitch, float button)
     {
         this.amplitude = amplitude;
         this.pitch = pitch;
         this.Target = target;
         this.player = player;
         this.unRegister = unRegister;
-        this.button = button; // i added this
+        this.button = button;
 
-        if (button == 1)//i added this whole if else
-        {
-            VisualizeArrow(amplitude, pitch);
-        }
-        else
+        if (button == 1)
         {
             VisualizeCircle(amplitude, pitch);
-        }
+        } 
+        else if (button == 2)
+        {
+            VisualizeArrow(amplitude, pitch);
+        }     
 
         StartCoroutine(RotateToTheTarget());
         StartTimer();

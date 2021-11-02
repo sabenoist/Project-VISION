@@ -37,7 +37,7 @@ public class SoundDirectionIndicatorSystem : MonoBehaviour
         CheckIfObjectInSight -= InSight;
     }
 
-    public void Create(Transform target, float amplitude, int pitch, float button) // i added float button here 
+    public void Create(Transform target, float amplitude, int pitch, float button)
     {
         if (Indicators.ContainsKey(target))
         {
@@ -46,7 +46,7 @@ public class SoundDirectionIndicatorSystem : MonoBehaviour
         }
 
         SoundDirectionIndicator newIndicator = Instantiate(indicatorPrefab, holder);
-        newIndicator.Register(target, player, new Action( () => { Indicators.Remove(target); } ), amplitude, pitch, button); // i added button here 
+        newIndicator.Register(target, player, new Action( () => { Indicators.Remove(target); } ), amplitude, pitch, button); 
 
         Indicators.Add(target, newIndicator);
     }

@@ -693,32 +693,35 @@
     {
         "id": "f417350d.ab99f8",
         "type": "ui_group",
-        "name": "Input 1",
+        "name": "Circle",
         "tab": "fc603201.6709f",
         "order": 1,
         "disp": true,
         "width": "6",
-        "collapse": false
+        "collapse": false,
+        "className": ""
     },
     {
         "id": "ff6e1064.e8e84",
         "type": "ui_group",
-        "name": "Input 2",
+        "name": "Arrow",
         "tab": "fc603201.6709f",
         "order": 2,
         "disp": true,
         "width": "6",
-        "collapse": false
+        "collapse": false,
+        "className": ""
     },
     {
         "id": "e528f548.8ae388",
         "type": "ui_group",
-        "name": "Input 3",
+        "name": "Nothing",
         "tab": "fc603201.6709f",
         "order": 3,
         "disp": true,
         "width": "6",
-        "collapse": false
+        "collapse": false,
+        "className": ""
     },
     {
         "id": "fc603201.6709f",

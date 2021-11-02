@@ -24,11 +24,11 @@ public class MQTT_Client : M2MqttUnityClient
     private string[] topics;
 
     /// <summary>
-    /// Array of topics to subscribe to.
+    /// Enable or disable verbose logging of received data.
     /// </summary>
     [Header("Debug options")]
     [SerializeField]
-    private bool verboseLogging = true;
+    private bool verboseLogging = false;
 
     /// <summary>
     /// Event to trigger when data has been received.

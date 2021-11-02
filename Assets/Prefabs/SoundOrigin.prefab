@@ -110,6 +110,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e005ca80fc4874bb1d5c671ff2703b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyTimer: 10
+  destroyTimer: 30
   amplitude: 10
   pitch: 1
