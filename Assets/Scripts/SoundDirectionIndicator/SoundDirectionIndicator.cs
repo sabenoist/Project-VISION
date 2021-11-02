@@ -61,18 +61,28 @@ public class SoundDirectionIndicator : MonoBehaviour
     private float amplitude;//to be received from the server
     public float amplitudeScalar = 0.05f;
     private int pitch; //array of pitch to be received from servcer
+    private float button; //which button that has been pressed from server, signaling which graphic should be displayed //i added this
 
     private GameObject circleVisualizer;
 
-    public void Register(Transform target, Transform player, Action unRegister, float amplitude, int pitch)
+    public void Register(Transform target, Transform player, Action unRegister, float amplitude, int pitch, float button) // i added float button here
     {
         this.amplitude = amplitude;
         this.pitch = pitch;
         this.Target = target;
         this.player = player;
         this.unRegister = unRegister;
+        this.button = button; // i added this
 
-        VisualizeCircle(amplitude, pitch);
+        if (button == 1)//i added this whole if else
+        {
+            VisualizeArrow(amplitude, pitch);
+        }
+        else
+        {
+            VisualizeCircle(amplitude, pitch);
+        }
+
         StartCoroutine(RotateToTheTarget());
         StartTimer();
     }
@@ -136,6 +146,12 @@ public class SoundDirectionIndicator : MonoBehaviour
 
         unRegister();
         Destroy(gameObject);
+    }
+
+    private void VisualizeArrow(float amplitude, int pitch) // i added this 
+    {
+        //doing something
+        Debug.Log("visualize arrow");
     }
 
     private void VisualizeCircle(float amplitude, int pitch) {

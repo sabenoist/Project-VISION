@@ -21,7 +21,7 @@ public class SoundDirectionIndicatorSystem : MonoBehaviour
     private Dictionary<Transform, SoundDirectionIndicator> Indicators = new Dictionary<Transform, SoundDirectionIndicator>();
 
     #region Delegates
-    public static Action<Transform, float, int> CreateIndicator = delegate { };
+    public static Action<Transform, float, int, float> CreateIndicator = delegate { };
     public static Func<Transform, bool> CheckIfObjectInSight = null;
     #endregion
 
@@ -37,7 +37,7 @@ public class SoundDirectionIndicatorSystem : MonoBehaviour
         CheckIfObjectInSight -= InSight;
     }
 
-    public void Create(Transform target, float amplitude, int pitch)
+    public void Create(Transform target, float amplitude, int pitch, float button) // i added float button here 
     {
         if (Indicators.ContainsKey(target))
         {
@@ -46,7 +46,7 @@ public class SoundDirectionIndicatorSystem : MonoBehaviour
         }
 
         SoundDirectionIndicator newIndicator = Instantiate(indicatorPrefab, holder);
-        newIndicator.Register(target, player, new Action( () => { Indicators.Remove(target); } ), amplitude, pitch);
+        newIndicator.Register(target, player, new Action( () => { Indicators.Remove(target); } ), amplitude, pitch, button); // i added button here 
 
         Indicators.Add(target, newIndicator);
     }

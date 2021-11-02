@@ -28,7 +28,7 @@ public class MQTT_Client : M2MqttUnityClient
     /// </summary>
     [Header("Debug options")]
     [SerializeField]
-    private bool verboseLogging = false;
+    private bool verboseLogging = true;
 
     /// <summary>
     /// Event to trigger when data has been received.
