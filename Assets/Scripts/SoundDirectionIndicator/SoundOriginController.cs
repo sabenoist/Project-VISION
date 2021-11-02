@@ -7,16 +7,58 @@ public class SoundOriginController : MonoBehaviour
 	public Transform userTransform;
 	public GameObject soundOriginPrefab;
 
+	/// <summary>
+	/// Instantiates a SoundOrigin object based on the data provided by the dictionary parameter.
+	/// </summary>
+	/// <param name="data">Dictionary object holding the data sent from the server.</param>
 	public void CreateSoundOrigin(Dictionary<string, string> data) {
 		GameObject soundOrigin = Instantiate(soundOriginPrefab);
 		IndicatorRegister indicatorRegister = soundOrigin.GetComponent<IndicatorRegister>();
-		indicatorRegister.SetData(float.Parse(data["decibels"]), int.Parse(data["pitch"]), float.Parse(data["timeperiod"]));
+
+		float decibels = getFloat(data, "decibels");
+		int pitch = getInt(data, "pitch");
+		float timePeriod = getFloat(data, "timeperiod");
+		float distance = getFloat(data, "distance");
+		float direction = getFloat(data, "direction");
+
+		if (decibels < 0 || pitch < 0 || timePeriod < 0 || distance < 0 || direction < 0) {
+			Debug.Log("Incomplete data received.");
+			return;
+        }
+
+		indicatorRegister.SetData(decibels, pitch, timePeriod);
 
 		Vector3 newPosition = new Vector3(userTransform.position.x, userTransform.position.y, userTransform.position.z);
 		soundOrigin.transform.position = newPosition;
-		soundOrigin.transform.Translate(float.Parse(data["distance"]) * Mathf.Cos(Mathf.PI / 180 * float.Parse(data["direction"])), 1, float.Parse(data["distance"]) * Mathf.Sin(Mathf.PI / 180 * float.Parse(data["direction"])), 0f);
+		soundOrigin.transform.Translate(distance * Mathf.Cos(Mathf.PI / 180 * direction), 1, distance * Mathf.Sin(Mathf.PI / 180 * direction), 0f);
 
 		indicatorRegister.Register();
+	}
+
+	/// <summary>
+	/// Attempts to extract a float value from the dictionary. If value is not found it will return -1.
+	/// </summary>
+	/// <param name="dic">Dictionary holding the key and value to extract.</param>
+	/// <param name="key">The key to extract the data with.</param>
+	/// <returns>A float value extracted from the dictionary. If value not found it will return -1.</returns>
+	private float getFloat(Dictionary<string, string> dic, string key) {
+		if (!dic.TryGetValue(key, out string value)) {
+			return -1;
+		}
+		return float.Parse(value);
+	}
+
+	/// <summary>
+	/// Attempts to extract an int value from the dictionary. If value is not found it will return -1.
+	/// </summary>
+	/// <param name="dic">Dictionary holding the key and value to extract.</param>
+	/// <param name="key">The key to extract the data with.</param>
+	/// <returns>An int value extracted from the dictionary. If value not found it will return -1.</returns>
+	private int getInt(Dictionary<string, string> dic, string key) {
+		if (!dic.TryGetValue(key, out string value)) {
+			return -1;
+		}
+		return int.Parse(value);
 	}
 
 	/// <summary>
