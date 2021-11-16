@@ -123,6 +123,69 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &31928263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 31928264}
+  - component: {fileID: 31928265}
+  m_Layer: 0
+  m_Name: 3DBarSoundOriginIndicator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &31928264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31928263}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &31928265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31928263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8197fb57fe58f03488c363896a26380b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barRed: {fileID: 5061935564130354088, guid: 9d1fce4c4a817604cb2d6d44294d943a, type: 3}
+  barBlue: {fileID: 183866913268155628, guid: abd7b0850d52a374783ed1b3f0398539, type: 3}
+  barGreen: {fileID: 1306050107876698802, guid: f7418205b642de74c94a825b7c50c9b5, type: 3}
+  barGroup:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  volumnData:
+  - 0.8
+  - 0.6
+  - 0.4
+  pitch:
+  - 0
+  - 1
+  - 2
+  position:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
 --- !u!1 &230026218
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,6 +428,70 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2085802935
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2085802936}
+  - component: {fileID: 2085802937}
+  m_Layer: 0
+  m_Name: 3DSoundOriginIndicator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2085802936
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085802935}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.87, y: 0, z: 0.07}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2085802937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085802935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9eb8fcee6b7a7245bf5d51a83b423e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circleRed: {fileID: 6875018207915407313, guid: cbb76d7ab523c4944aa28d423a047492, type: 3}
+  circleBlue: {fileID: 6875018207915407313, guid: 06d747dabacc72a43bd5763b3c8ea905, type: 3}
+  circleGreen: {fileID: 6875018207915407313, guid: 849dfe2cf2b9b374bb14df54aee4af66, type: 3}
+  CircleGroup:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  volumnData:
+  - 5
+  - 8
+  - 10
+  pitch:
+  - 2
+  - 1
+  - 0
+  position:
+  - {x: 1.5, y: 0, z: 15}
+  - {x: 1.5, y: 0, z: 15}
+  - {x: 1.5, y: 0, z: 15}
 --- !u!1001 &2920513946697423514
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -433,6 +560,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8288551347431508832, guid: a43dafa818e75714d84f143df80f0eff, type: 3}
+      propertyPath: circleBlue
+      value: 
+      objectReference: {fileID: 4884001699842995718, guid: 4ef08fb0adcf9a7418dd72addc3f8701, type: 3}
     - target: {fileID: 8288551347431508833, guid: a43dafa818e75714d84f143df80f0eff, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -520,6 +651,10 @@ PrefabInstance:
     - target: {fileID: 8288551347431508837, guid: a43dafa818e75714d84f143df80f0eff, type: 3}
       propertyPath: m_Name
       value: CircleCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8288551347431508837, guid: a43dafa818e75714d84f143df80f0eff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a43dafa818e75714d84f143df80f0eff, type: 3}
