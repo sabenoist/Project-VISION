@@ -38,8 +38,9 @@ public class Bar3D : MonoBehaviour
 				Vector3 newSize = barRed.GetComponent<Transform>().localScale;
 				//change size of the circle based on the  spectrumData
 				newSize.y = volumnData[i];
-			//newSize.x = volumnData[i];
-			barRed.GetComponent<Transform>().localScale = newSize;
+			newSize.x = volumnData[i];
+				newSize.z = volumnData[i];
+				barRed.GetComponent<Transform>().localScale = newSize;
 
 				//slowly fade out the circle
 				StartCoroutine(FadeOutMaterial(1.5f, barGroup[i]));
@@ -60,8 +61,9 @@ public class Bar3D : MonoBehaviour
 				Vector3 newSize = barBlue.GetComponent<Transform>().localScale;
 				//change size of the circle based on the  spectrumData
 				newSize.y = volumnData[i];
-			//newSize.x = volumnData[i];
-			barBlue.GetComponent<Transform>().localScale = newSize;
+			newSize.x = volumnData[i];
+				newSize.z = volumnData[i];
+				barBlue.GetComponent<Transform>().localScale = newSize;
 				StartCoroutine(FadeOutMaterial(1.5f, barGroup[i]));
 				Destroy(barGroup[i], 1.5f);//destory circle prefab  after 1.5 seconds
 
@@ -77,8 +79,9 @@ public class Bar3D : MonoBehaviour
 				Vector3 newSize = barGreen.GetComponent<Transform>().localScale;
 				//change size of the circle based on the  spectrumData
 				newSize.y = volumnData[i];
-			//newSize.x = volumnData[i];
-			barGreen.GetComponent<Transform>().localScale = newSize;
+			newSize.x = volumnData[i];
+				newSize.z = volumnData[i];
+				barGreen.GetComponent<Transform>().localScale = newSize;
 				StartCoroutine(FadeOutMaterial(1.5f, barGroup[i]));
 				Destroy(barGroup[i], 1.5f);//destory circle prefab after 1.5 seconds
 
