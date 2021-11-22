@@ -26,6 +26,11 @@ public class SoundDirectionIndicatorSystem : MonoBehaviour
     public static Func<Transform, bool> CheckIfObjectInSight = null;
     #endregion
 
+    private void Update()
+    {
+        holder.rotation = Quaternion.Euler(holder.rotation.x, holder.rotation.y, camera.transform.rotation.z * 2.571f);
+    }
+
     private void OnEnable()
     {
         CreateIndicator += Create;
