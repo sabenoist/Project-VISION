@@ -7,8 +7,8 @@ using System.Linq;
 
 public class SoundDirectionIndicator : MonoBehaviour {
     [SerializeField]
-    private const float MaxTimer = 8.0f;
-    private float timer = MaxTimer;
+    private float MaxTimer = 8.0f;
+    private float timer = 8.0f;
 
     private CanvasGroup canvasGroup = null;
     protected CanvasGroup CanvasGroup 
@@ -63,7 +63,7 @@ public class SoundDirectionIndicator : MonoBehaviour {
     private int pitch;
     private float button; //which button that has been pressed from server, signaling which graphic should be displayed
 
-    public void Register(Transform target, Transform player, Action unRegister, float amplitude, int pitch, float button) 
+    public void Register(Transform target, Transform player, Action unRegister, float amplitude, int pitch, float button, float destroyTimer) 
     {
         this.amplitude = amplitude;
         this.pitch = pitch;
@@ -71,6 +71,8 @@ public class SoundDirectionIndicator : MonoBehaviour {
         this.player = player;
         this.unRegister = unRegister;
         this.button = button;
+        this.MaxTimer = destroyTimer;
+        this.timer = destroyTimer;
 
         if (button == 1) 
         {

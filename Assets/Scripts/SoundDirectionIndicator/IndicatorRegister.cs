@@ -31,7 +31,7 @@ public class IndicatorRegister : MonoBehaviour
     {
         if (!SoundDirectionIndicatorSystem.CheckIfObjectInSight(this.transform))
         {
-            SoundDirectionIndicatorSystem.CreateIndicator(this.transform, amplitude, pitch, button);
+            SoundDirectionIndicatorSystem.CreateIndicator(this.transform, amplitude, pitch, button, destroyTimer);
         }
 
         Destroy(this.gameObject, destroyTimer);
