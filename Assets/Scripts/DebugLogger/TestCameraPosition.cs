@@ -16,6 +16,6 @@ public class TestCameraPosition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = transform.rotation.x.ToString();
+        text.text = transform.rotation.z.ToString();
     }
 }
