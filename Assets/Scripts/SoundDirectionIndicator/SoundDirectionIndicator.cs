@@ -298,7 +298,7 @@ public class SoundDirectionIndicator : MonoBehaviour {
             }
             else if (pitch == 1)
             {
-                circleArrowVisualizer.GetComponent<RawImage>().color = Color.blue;
+                circleArrowVisualizer.GetComponent<RawImage>().color = Color.yellow;
             }
             else if (pitch >= 2)
             {
@@ -324,13 +324,13 @@ public class SoundDirectionIndicator : MonoBehaviour {
             }
             else if (pitch == 1)
             {
-                circleArrowVisualizer.GetComponent<RawImage>().color = Color.green;
-                circleArrowVisualizer.transform.GetChild(0).gameObject.GetComponent<RawImage>().color = Color.yellow;
+                circleArrowVisualizer.GetComponent<RawImage>().color = Color.yellow;
+                circleArrowVisualizer.transform.GetChild(0).gameObject.GetComponent<RawImage>().color = Color.green;
             }
             else if (pitch >= 2)
             {
-                circleArrowVisualizer.GetComponent<RawImage>().color = Color.yellow;
-                circleArrowVisualizer.transform.GetChild(0).gameObject.GetComponent<RawImage>().color = Color.red;
+                circleArrowVisualizer.GetComponent<RawImage>().color = Color.red;
+                circleArrowVisualizer.transform.GetChild(0).gameObject.GetComponent<RawImage>().color = Color.yellow;
             }
         }
 
@@ -353,15 +353,15 @@ public class SoundDirectionIndicator : MonoBehaviour {
             }
             else if (pitch == 1)
             {
-                circleArrowVisualizer.GetComponent<RawImage>().color = Color.green;
+                circleArrowVisualizer.GetComponent<RawImage>().color = Color.yellow;
                 circleArrowVisualizer.transform.GetChild(0).gameObject.GetComponent<RawImage>().color = Color.yellow;
-                circleArrowVisualizer.transform.GetChild(1).gameObject.GetComponent<RawImage>().color = Color.yellow;
+                circleArrowVisualizer.transform.GetChild(1).gameObject.GetComponent<RawImage>().color = Color.green;
             }
             else if (pitch >= 2)
             {
-                circleArrowVisualizer.GetComponent<RawImage>().color = Color.green;
+                circleArrowVisualizer.GetComponent<RawImage>().color = Color.red;
                 circleArrowVisualizer.transform.GetChild(0).gameObject.GetComponent<RawImage>().color = Color.yellow;
-                circleArrowVisualizer.transform.GetChild(1).gameObject.GetComponent<RawImage>().color = Color.red;
+                circleArrowVisualizer.transform.GetChild(1).gameObject.GetComponent<RawImage>().color = Color.green;
             }
         }
 
