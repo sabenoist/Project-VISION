@@ -57,6 +57,16 @@ public class SoundDirectionIndicator : MonoBehaviour {
     private GameObject arrowIndicator;
     [SerializeField]
     private GameObject circleIndicator;
+    [SerializeField]
+    private GameObject circleArrowIndicator;
+    [SerializeField]
+    private GameObject circleArrow2Indicator;
+    [SerializeField]
+    private GameObject adjustableArrow1;
+    [SerializeField]
+    private GameObject adjustableArrow2;
+    [SerializeField]
+    private GameObject adjustableArrow3;
 
     private float amplitude;
     public float amplitudeScalar = 0.05f;
@@ -82,6 +92,19 @@ public class SoundDirectionIndicator : MonoBehaviour {
         {
             VisualizeArrow(amplitude, pitch);
         }
+        else if (button == 3)
+        {
+            VisualizeCircleArrow(amplitude, pitch);
+        }
+        else if (button == 4)
+        {
+            VisualizeCircleArrow2(amplitude, pitch);
+        }
+        else if (button == 5)
+        {
+            VisualizeAdjustableArrow(amplitude, pitch);
+        }
+
 
         StartCoroutine(RotateToTheTarget());
         StartTimer();
@@ -199,5 +222,148 @@ public class SoundDirectionIndicator : MonoBehaviour {
         {
             circleVisualizer.GetComponent<RawImage>().color = Color.red;
         }
+    }
+    private void VisualizeCircleArrow(float amplitude, int pitch)
+    {
+        // TODO: refactor this to avoid duplicating code with VisualizeArrow().
+        GameObject circleArrowVisualizer = Instantiate(circleArrowIndicator, transform.position, transform.rotation);
+        circleArrowVisualizer.transform.SetParent(GameObject.FindGameObjectWithTag("Pointer").transform, false);
+        circleArrowVisualizer.transform.position = GameObject.FindGameObjectWithTag("Pointer").transform.position;
+        GameObject arrow = circleArrowVisualizer.transform.GetChild(0).gameObject;
+
+        Vector3 newSize = arrow.GetComponent<Transform>().localScale;
+        newSize.y = amplitude * 0.02f;
+        //  newSize.x = amplitude * amplitudeScalar;
+        arrow.GetComponent<Transform>().localScale = newSize;
+
+        if (pitch == 0)
+        {
+            arrow.transform.GetChild(0).gameObject.GetComponent<RawImage>().color = Color.green;
+            circleArrowVisualizer.GetComponent<RawImage>().color = Color.green;
+        }
+        else if (pitch == 1)
+        {
+            //arrow.GetComponent<RawImage>().color = Color.yellow;
+            arrow.transform.GetChild(0).gameObject.GetComponent<RawImage>().color = Color.blue;
+            circleArrowVisualizer.GetComponent<RawImage>().color = Color.blue;
+        }
+        else if (pitch >= 2)
+        {
+            arrow.transform.GetChild(0).gameObject.GetComponent<RawImage>().color = Color.red;
+            circleArrowVisualizer.GetComponent<RawImage>().color = Color.red;
+        }
+    }
+    private void VisualizeCircleArrow2(float amplitude, int pitch)
+    {
+        // TODO: refactor this to avoid duplicating code with VisualizeArrow().
+        GameObject circleArrowVisualizer = Instantiate(circleArrow2Indicator, transform.position, transform.rotation);
+        circleArrowVisualizer.transform.SetParent(GameObject.FindGameObjectWithTag("Pointer").transform, false);
+        circleArrowVisualizer.transform.position = GameObject.FindGameObjectWithTag("Pointer").transform.position;
+
+        Vector3 newSize = circleArrowVisualizer.GetComponent<Transform>().localScale;
+        newSize.y = amplitude * amplitudeScalar;
+        newSize.x = amplitude * amplitudeScalar;
+        circleArrowVisualizer.GetComponent<Transform>().localScale = newSize;
+
+        if (pitch == 0)
+        {
+            circleArrowVisualizer.GetComponent<RawImage>().color = Color.green;
+        }
+        else if (pitch == 1)
+        {
+            circleArrowVisualizer.GetComponent<RawImage>().color = Color.yellow;
+        }
+        else if (pitch >= 2)
+        {
+            circleArrowVisualizer.GetComponent<RawImage>().color = Color.red;
+        }
+    }
+    private void VisualizeAdjustableArrow(float amplitude, int pitch)
+    {
+        // TODO: refactor this to avoid duplicating code with VisualizeArrow().
+        if (amplitude >= 70 && amplitude <= 100)
+        {
+            GameObject circleArrowVisualizer = Instantiate(adjustableArrow1, transform.position, transform.rotation);
+            circleArrowVisualizer.transform.SetParent(GameObject.FindGameObjectWithTag("Pointer").transform, false);
+            circleArrowVisualizer.transform.position = GameObject.FindGameObjectWithTag("Pointer").transform.position;
+
+            Vector3 newSize = circleArrowVisualizer.GetComponent<Transform>().localScale;
+            newSize.y = amplitude * amplitudeScalar;
+            newSize.x = amplitude * amplitudeScalar;
+            circleArrowVisualizer.GetComponent<Transform>().localScale = newSize;
+
+            if (pitch == 0)
+            {
+                circleArrowVisualizer.GetComponent<RawImage>().color = Color.green;
+            }
+            else if (pitch == 1)
+            {
+                circleArrowVisualizer.GetComponent<RawImage>().color = Color.blue;
+            }
+            else if (pitch >= 2)
+            {
+                circleArrowVisualizer.GetComponent<RawImage>().color = Color.red;
+            }
+        }
+
+        if (amplitude > 100 && amplitude <= 130)
+        {
+            GameObject circleArrowVisualizer = Instantiate(adjustableArrow2, transform.position, transform.rotation);
+            circleArrowVisualizer.transform.SetParent(GameObject.FindGameObjectWithTag("Pointer").transform, false);
+            circleArrowVisualizer.transform.position = GameObject.FindGameObjectWithTag("Pointer").transform.position;
+
+            Vector3 newSize = circleArrowVisualizer.GetComponent<Transform>().localScale;
+            newSize.y = amplitude * amplitudeScalar;
+            newSize.x = amplitude * amplitudeScalar;
+            circleArrowVisualizer.GetComponent<Transform>().localScale = newSize;
+
+            if (pitch == 0)
+            {
+                circleArrowVisualizer.GetComponent<RawImage>().color = Color.green;
+                circleArrowVisualizer.transform.GetChild(0).gameObject.GetComponent<RawImage>().color = Color.green;
+            }
+            else if (pitch == 1)
+            {
+                circleArrowVisualizer.GetComponent<RawImage>().color = Color.green;
+                circleArrowVisualizer.transform.GetChild(0).gameObject.GetComponent<RawImage>().color = Color.yellow;
+            }
+            else if (pitch >= 2)
+            {
+                circleArrowVisualizer.GetComponent<RawImage>().color = Color.yellow;
+                circleArrowVisualizer.transform.GetChild(0).gameObject.GetComponent<RawImage>().color = Color.red;
+            }
+        }
+
+        if (amplitude > 130 && amplitude <= 160)
+        {
+            GameObject circleArrowVisualizer = Instantiate(adjustableArrow3, transform.position, transform.rotation);
+            circleArrowVisualizer.transform.SetParent(GameObject.FindGameObjectWithTag("Pointer").transform, false);
+            circleArrowVisualizer.transform.position = GameObject.FindGameObjectWithTag("Pointer").transform.position;
+
+            Vector3 newSize = circleArrowVisualizer.GetComponent<Transform>().localScale;
+            newSize.y = amplitude * amplitudeScalar;
+            newSize.x = amplitude * amplitudeScalar;
+            circleArrowVisualizer.GetComponent<Transform>().localScale = newSize;
+
+            if (pitch == 0)
+            {
+                circleArrowVisualizer.GetComponent<RawImage>().color = Color.green;
+                circleArrowVisualizer.transform.GetChild(0).gameObject.GetComponent<RawImage>().color = Color.green;
+                circleArrowVisualizer.transform.GetChild(1).gameObject.GetComponent<RawImage>().color = Color.green;
+            }
+            else if (pitch == 1)
+            {
+                circleArrowVisualizer.GetComponent<RawImage>().color = Color.green;
+                circleArrowVisualizer.transform.GetChild(0).gameObject.GetComponent<RawImage>().color = Color.yellow;
+                circleArrowVisualizer.transform.GetChild(1).gameObject.GetComponent<RawImage>().color = Color.yellow;
+            }
+            else if (pitch >= 2)
+            {
+                circleArrowVisualizer.GetComponent<RawImage>().color = Color.green;
+                circleArrowVisualizer.transform.GetChild(0).gameObject.GetComponent<RawImage>().color = Color.yellow;
+                circleArrowVisualizer.transform.GetChild(1).gameObject.GetComponent<RawImage>().color = Color.red;
+            }
+        }
+
     }
 }

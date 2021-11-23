@@ -137,6 +137,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08f270441af6d08478274912996f517b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxTimer: 8
   arrowIndicator: {fileID: 503721512120199873, guid: db8d60687079c6846b194e67d69e0980, type: 3}
   circleIndicator: {fileID: 3026150641262290654, guid: 65044b099267d2c438e8ea08267c7cdc, type: 3}
+  circleArrowIndicator: {fileID: 7066510755300187230, guid: ed2b721487742374f813b381fe7eba2e, type: 3}
+  circleArrow2Indicator: {fileID: 4884001699842995718, guid: 4ef08fb0adcf9a7418dd72addc3f8701, type: 3}
+  adjustableArrow1: {fileID: 6485978638383719105, guid: b3972552d341def4cb5935b825e86027, type: 3}
+  adjustableArrow2: {fileID: 2822747146926553665, guid: 3dea2d354d86e204badd47693282b398, type: 3}
+  adjustableArrow3: {fileID: 2624736754957274043, guid: 2077704eb2d8b184da0d75fbd70a49f9, type: 3}
   amplitudeScalar: 0.05

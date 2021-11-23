@@ -300,6 +300,7 @@ GameObject:
   - component: {fileID: 3750812764573365530}
   - component: {fileID: 3750812764573365531}
   - component: {fileID: 5381832940368657400}
+  - component: {fileID: 301042440107302334}
   m_Layer: 0
   m_Name: FeedbackPointer
   m_TagString: Untagged
@@ -383,6 +384,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &301042440107302334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3750812764573365532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e005ca80fc4874bb1d5c671ff2703b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyTimer: 15
+  amplitude: 10
+  pitch: 1
+  button: 1
 --- !u!1 &4332194714436898856
 GameObject:
   m_ObjectHideFlags: 0
