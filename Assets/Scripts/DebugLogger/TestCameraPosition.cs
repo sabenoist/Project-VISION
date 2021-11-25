@@ -5,8 +5,13 @@ using UnityEngine.UI;
 
 public class TestCameraPosition : MonoBehaviour
 {
-    public Transform transform;
-    public Text text;
+    public Transform canvasTransform;
+    public Text IpadX;
+    public Text IpadY;
+    public Text IpadZ;
+    public Text CanvasX;
+    public Text CanvasY;
+    public Text CanvasZ;
 
     void Start()
     {
@@ -16,6 +21,12 @@ public class TestCameraPosition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = transform.rotation.z.ToString();
+        CanvasX.text = canvasTransform.rotation.x.ToString();
+        CanvasY.text = canvasTransform.rotation.y.ToString();
+        CanvasZ.text = canvasTransform.rotation.z.ToString();
+
+        IpadX.text = this.transform.rotation.x.ToString();
+        IpadY.text = this.transform.rotation.y.ToString();
+        IpadZ.text = this.transform.rotation.z.ToString();
     }
 }
