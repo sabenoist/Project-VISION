@@ -31,7 +31,9 @@ public class SoundDirectionIndicatorSystem : MonoBehaviour
         //holder.rotation = Quaternion.Euler(holder.rotation.x, holder.rotation.y, camera.transform.rotation.z * 3600f);
         //this.transform.rotation = Quaternion.Euler(this.transform.rotation.x, this.transform.rotation.y, camera.transform.rotation.z * 3600f);
         //holder.gameObject.transform.rotation = Quaternion.Euler(holder.gameObject.transform.rotation.x, camera.transform.rotation.y * 3600f, holder.gameObject.transform.rotation.z);
-        holder.gameObject.transform.Rotate(holder.gameObject.transform.rotation.x, camera.transform.rotation.y, holder.gameObject.transform.rotation.z);
+
+        Vector3 eulerRotation = new Vector3(holder.gameObject.transform.eulerAngles.x, camera.transform.eulerAngles.y, holder.transform.eulerAngles.z);
+        holder.gameObject.transform.rotation = Quaternion.Euler(eulerRotation);
     }
 
     private void OnEnable()
