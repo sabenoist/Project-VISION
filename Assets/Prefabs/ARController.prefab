@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 8653532631309270451}
   - component: {fileID: 5663184540790164513}
   - component: {fileID: 516530197862726921}
+  - component: {fileID: 1159372138}
   m_Layer: 0
   m_Name: AR Camera
   m_TagString: Untagged
@@ -195,7 +196,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 20
-  field of view: 60
+  field of view: 26.991467
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -241,7 +242,7 @@ MonoBehaviour:
   m_LightEstimationMode: -1
   m_AutoFocus: 1
   m_LightEstimation: 0
-  m_FacingDirection: 1
+  m_FacingDirection: 2
 --- !u!114 &516530197862726921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,3 +257,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UseCustomMaterial: 0
   m_CustomMaterial: {fileID: 0}
+--- !u!114 &1159372138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5597536908075359110}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c807da56301b0ce44a8d67bf187499f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasTransform: {fileID: 0}
+  IpadX: {fileID: 0}
+  IpadY: {fileID: 0}
+  IpadZ: {fileID: 0}
+  CanvasX: {fileID: 0}
+  CanvasY: {fileID: 0}
+  CanvasZ: {fileID: 0}

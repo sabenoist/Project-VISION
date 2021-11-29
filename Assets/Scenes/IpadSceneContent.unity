@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 883395692801082898, guid: 73fceca82a6a75846a7b6d82187f8a28, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 883395692801082902, guid: 73fceca82a6a75846a7b6d82187f8a28, type: 3}
       propertyPath: m_Pivot.x
@@ -499,6 +499,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1159372138, guid: 1a2be6bf74e34f74ab2200ec6b27d503, type: 3}
+      propertyPath: IpadX
+      value: 
+      objectReference: {fileID: 886182545}
+    - target: {fileID: 1159372138, guid: 1a2be6bf74e34f74ab2200ec6b27d503, type: 3}
+      propertyPath: IpadY
+      value: 
+      objectReference: {fileID: 886182544}
+    - target: {fileID: 1159372138, guid: 1a2be6bf74e34f74ab2200ec6b27d503, type: 3}
+      propertyPath: IpadZ
+      value: 
+      objectReference: {fileID: 886182543}
+    - target: {fileID: 1159372138, guid: 1a2be6bf74e34f74ab2200ec6b27d503, type: 3}
+      propertyPath: CanvasX
+      value: 
+      objectReference: {fileID: 886182542}
+    - target: {fileID: 1159372138, guid: 1a2be6bf74e34f74ab2200ec6b27d503, type: 3}
+      propertyPath: CanvasY
+      value: 
+      objectReference: {fileID: 886182541}
+    - target: {fileID: 1159372138, guid: 1a2be6bf74e34f74ab2200ec6b27d503, type: 3}
+      propertyPath: CanvasZ
+      value: 
+      objectReference: {fileID: 886182540}
+    - target: {fileID: 1159372138, guid: 1a2be6bf74e34f74ab2200ec6b27d503, type: 3}
+      propertyPath: canvasTransform
+      value: 
+      objectReference: {fileID: 2022402762}
     - target: {fileID: 2011463932177969620, guid: 1a2be6bf74e34f74ab2200ec6b27d503, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -543,21 +571,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2377997982202598237, guid: 1a2be6bf74e34f74ab2200ec6b27d503, type: 3}
-      propertyPath: field of view
-      value: 26.991467
-      objectReference: {fileID: 0}
-    - target: {fileID: 2377997982202598237, guid: 1a2be6bf74e34f74ab2200ec6b27d503, type: 3}
-      propertyPath: m_projectionMatrixMode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4515019184757680904, guid: 1a2be6bf74e34f74ab2200ec6b27d503, type: 3}
       propertyPath: m_Name
       value: ARController
-      objectReference: {fileID: 0}
-    - target: {fileID: 5663184540790164513, guid: 1a2be6bf74e34f74ab2200ec6b27d503, type: 3}
-      propertyPath: m_FacingDirection
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a2be6bf74e34f74ab2200ec6b27d503, type: 3}
@@ -576,30 +592,6 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 2377997982202598237, guid: 1a2be6bf74e34f74ab2200ec6b27d503, type: 3}
   m_PrefabInstance: {fileID: 1159372133}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1159372137 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5597536908075359110, guid: 1a2be6bf74e34f74ab2200ec6b27d503, type: 3}
-  m_PrefabInstance: {fileID: 1159372133}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1159372138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1159372137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c807da56301b0ce44a8d67bf187499f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvasTransform: {fileID: 2022402762}
-  IpadX: {fileID: 886182545}
-  IpadY: {fileID: 886182544}
-  IpadZ: {fileID: 886182543}
-  CanvasX: {fileID: 886182542}
-  CanvasY: {fileID: 886182541}
-  CanvasZ: {fileID: 886182540}
 --- !u!1001 &2022402761
 PrefabInstance:
   m_ObjectHideFlags: 0
