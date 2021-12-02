@@ -145,4 +145,5 @@ MonoBehaviour:
   adjustableArrow1: {fileID: 6485978638383719105, guid: b3972552d341def4cb5935b825e86027, type: 3}
   adjustableArrow2: {fileID: 2822747146926553665, guid: 3dea2d354d86e204badd47693282b398, type: 3}
   adjustableArrow3: {fileID: 2624736754957274043, guid: 2077704eb2d8b184da0d75fbd70a49f9, type: 3}
+  soundBars: {fileID: 8165760630629254661, guid: 957665cc3134d11488a5077d4acb4555, type: 3}
   amplitudeScalar: 0.05

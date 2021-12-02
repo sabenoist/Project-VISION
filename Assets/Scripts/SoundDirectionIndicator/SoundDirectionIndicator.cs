@@ -67,6 +67,8 @@ public class SoundDirectionIndicator : MonoBehaviour {
     private GameObject adjustableArrow2;
     [SerializeField]
     private GameObject adjustableArrow3;
+    [SerializeField]
+    private GameObject soundBars;
 
     private float amplitude;
     public float amplitudeScalar = 0.05f;
@@ -103,6 +105,10 @@ public class SoundDirectionIndicator : MonoBehaviour {
         else if (button == 5)
         {
             VisualizeAdjustableArrow(amplitude, pitch);
+        }
+        else if (button == 6)
+        {
+            VisualizeSoundBars(pitch);
         }
 
 
@@ -364,6 +370,34 @@ public class SoundDirectionIndicator : MonoBehaviour {
                 circleArrowVisualizer.transform.GetChild(1).gameObject.GetComponent<RawImage>().color = Color.green;
             }
         }
+    }
 
+    private void VisualizeSoundBars(int pitch)
+    {
+        GameObject bars = Instantiate(soundBars, transform.position, transform.rotation);
+        bars.transform.SetParent(GameObject.FindGameObjectWithTag("Pointer").transform, false);
+        bars.transform.position = GameObject.FindGameObjectWithTag("Pointer").transform.position;
+
+        if (pitch == 0)
+        {
+            foreach (GameObject bar in bars.GetComponent<AudioPeer>().bars)
+            {
+                bar.GetComponent<Image>().color = Color.green;
+            }
+        }
+        if (pitch == 1)
+        {
+            foreach (GameObject bar in bars.GetComponent<AudioPeer>().bars)
+            {
+                bar.GetComponent<Image>().color = Color.yellow;
+            }
+        }
+        if (pitch >= 2)
+        {
+            foreach (GameObject bar in bars.GetComponent<AudioPeer>().bars)
+            {
+                bar.GetComponent<Image>().color = Color.red;
+            }
+        }
     }
 }
