@@ -405,6 +405,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1140682364, guid: 841c73e85c6b9644f88911785306d07d, type: 3}
+      propertyPath: userTransform
+      value: 
+      objectReference: {fileID: 1159372134}
+    - target: {fileID: 1140682365, guid: 841c73e85c6b9644f88911785306d07d, type: 3}
+      propertyPath: userTransform
+      value: 
+      objectReference: {fileID: 1159372134}
     - target: {fileID: 6504621702550809191, guid: 841c73e85c6b9644f88911785306d07d, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -455,43 +463,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 841c73e85c6b9644f88911785306d07d, type: 3}
---- !u!1 &1140682363 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8973412607502677315, guid: 841c73e85c6b9644f88911785306d07d, type: 3}
-  m_PrefabInstance: {fileID: 1140682362}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1140682364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1140682363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d654c5a4aa7dc44458aa3b751574d459, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  userTransform: {fileID: 1159372134}
-  soundOriginPrefab: {fileID: 5654983530879845300, guid: 9177590429e76654290668d9581b3627, type: 3}
---- !u!114 &1140682365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1140682363}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3299702b48b6b1545b424556d6b89b91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  userTransform: {fileID: 1159372134}
-  soundOriginPrefab: {fileID: 100002, guid: 0bf73d4b4f2d14346bb56b2164eda25f, type: 3}
-  amplitudeScalar: 1
-  materialGreen: {fileID: 2100000, guid: f2f777e4944316a4aa2a53a9d9a76810, type: 2}
-  materialBlue: {fileID: 2100000, guid: 9f23d8d63f0c47d4ca9dde4b8e089ace, type: 2}
-  materialRed: {fileID: 2100000, guid: 0ab8ae0f5bff95148a2bfbf0feea3018, type: 2}
 --- !u!1001 &1159372133
 PrefabInstance:
   m_ObjectHideFlags: 0

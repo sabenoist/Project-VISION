@@ -13,6 +13,7 @@ public class NewSoundOriginController : MonoBehaviour
 	public Material materialGreen;
 	public Material materialBlue;
 	public Material materialRed;
+
 	/// <summary>
 	/// Instantiates a SoundOrigin object based on the data provided by the dictionary parameter.
 	/// </summary>
@@ -41,8 +42,10 @@ public class NewSoundOriginController : MonoBehaviour
 		Vector3 newPosition = new Vector3(userTransform.position.x, userTransform.position.y, userTransform.position.z);
 		soundOrigin.transform.position = newPosition;
 		soundOrigin.transform.Translate(distance * Mathf.Cos(Mathf.PI / 180 * direction), 1, distance * Mathf.Sin(Mathf.PI / 180 * direction), 0f);
+		
 		//change sound origin size
 		Vector3 newSize = soundOrigin.GetComponent<Transform>().localScale;
+		
 		//change size of the circle based on the  spectrumData
 		newSize.x = amplitude * amplitudeScalar;
 		newSize.y = amplitude * amplitudeScalar;
@@ -63,6 +66,7 @@ public class NewSoundOriginController : MonoBehaviour
 			//soundOrigin.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = Color.red;
 			soundOrigin.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().material = materialRed;
 		}
+
 		indicatorRegister.Register();
 	}
 

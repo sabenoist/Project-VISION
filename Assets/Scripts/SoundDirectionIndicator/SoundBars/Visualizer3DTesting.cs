@@ -10,7 +10,7 @@ public class Visualizer3DTesting : MonoBehaviour
 	//public float updateSentivity = 10.0f;
 	//public Color visualizerColor = Color.gray;
 	[Space(15)]
-	//public AudioClip audioClip;
+	public AudioClip audioClip;
 	//public bool loop = true;
 	[Space(15), Range(64, 8192)]
 	//public int visualizerSimples = 64;
