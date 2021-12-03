@@ -769,10 +769,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1dbd75f65a3368b41aa86149e68c4898, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.504
   m_Pitch: 1
   Loop: 1
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -865,7 +865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a5a1314a7a376e418ffc836e8a9e0a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scalar: 1
+  scalar: 1000
   samples:
   - 0
   - 0

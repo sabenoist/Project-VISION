@@ -88,4 +88,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 130e5b68eac0e3e459375499ef2c4d59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  decayScalar: 0.25
+  decayScalar: 0.05
