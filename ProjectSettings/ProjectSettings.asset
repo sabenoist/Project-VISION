@@ -9,7 +9,7 @@ PlayerSettings:
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
   defaultScreenOrientation: 4
-  targetDevice: 2
+  targetDevice: 1
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: ProjectVisionCo
@@ -154,7 +154,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.ProjectVisionCo.Project_VISION
-    Standalone: com.DefaultCompany.ProjectVISION
+    Standalone: com.ProjectVisionCo.ProjectVISION
     iPhone: com.ProjectVisionCo.ProjectVISION
   buildNumber:
     Standalone: 0
