@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,11 +29,21 @@ public class AudioPeer : MonoBehaviour
 
             if (i == 0)
             {
+                if (samples[0] * scalar > 14)
+                {
+                    samples[0] = 14 / scalar;
+                }
                 bars[i].transform.localScale = new Vector3(bar.x, samples[0] * scalar, bar.z);
+                //bars[i].transform.localScale = new Vector3(bar.x, (float)Math.Log(samples[0]), bar.z);
             }
             else
             {
+                if (samples[i * 8 - 1] * scalar > 14)
+                {
+                    samples[i * 8 - 1] = 14 / scalar;
+                }
                 bars[i].transform.localScale = new Vector3(bar.x, samples[i * 8 - 1] * scalar, bar.z);
+                //bars[i].transform.localScale = new Vector3(bar.x, (float)Math.Log(samples[i * 8 - 1]), bar.z);
             }
             
         }

@@ -145,5 +145,8 @@ MonoBehaviour:
   adjustableArrow1: {fileID: 6485978638383719105, guid: b3972552d341def4cb5935b825e86027, type: 3}
   adjustableArrow2: {fileID: 2822747146926553665, guid: 3dea2d354d86e204badd47693282b398, type: 3}
   adjustableArrow3: {fileID: 2624736754957274043, guid: 2077704eb2d8b184da0d75fbd70a49f9, type: 3}
-  soundBars: {fileID: 8165760630629254661, guid: 957665cc3134d11488a5077d4acb4555, type: 3}
+  emmasCircle: {fileID: 3773176228295385741, guid: e10367a7fb97e0d458a744be8d96e556, type: 3}
+  soundBarsDog: {fileID: 8165760630629254661, guid: 957665cc3134d11488a5077d4acb4555, type: 3}
+  soundBarsCar: {fileID: 8165760630629254661, guid: 8f222010e01ca014c93a6e04882da5db, type: 3}
+  soundBarsAmbulance: {fileID: 8165760630629254661, guid: 01e5e46f90102864e92d418550e9d48c, type: 3}
   amplitudeScalar: 0.05

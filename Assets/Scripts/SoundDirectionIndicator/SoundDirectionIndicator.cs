@@ -68,7 +68,13 @@ public class SoundDirectionIndicator : MonoBehaviour {
     [SerializeField]
     private GameObject adjustableArrow3;
     [SerializeField]
-    private GameObject soundBars;
+    private GameObject emmasCircle;
+    [SerializeField]
+    private GameObject soundBarsDog;
+    [SerializeField]
+    private GameObject soundBarsCar;
+    [SerializeField]
+    private GameObject soundBarsAmbulance;
 
     private float amplitude;
     public float amplitudeScalar = 0.05f;
@@ -108,7 +114,19 @@ public class SoundDirectionIndicator : MonoBehaviour {
         }
         else if (button == 6)
         {
-            VisualizeSoundBars(pitch);
+            VisualizeEmmasCircle(amplitude, pitch);
+        }
+        else if (button == 7)
+        {
+            VisualizeSoundBarsDog(pitch);
+        }
+        else if (button == 8)
+        {
+            VisualizeSoundBarsCar(pitch);
+        }
+        else if (button == 9)
+        {
+            VisualizeSoundBarsAmbulance(pitch);
         }
 
 
@@ -178,6 +196,7 @@ public class SoundDirectionIndicator : MonoBehaviour {
         Destroy(gameObject);
     }
 
+    #region Minghui
     private void VisualizeArrow(float amplitude, int pitch)
     {
         // TODO: refactor this to avoid duplicating code with VisualizeCircle().
@@ -371,10 +390,40 @@ public class SoundDirectionIndicator : MonoBehaviour {
             }
         }
     }
+    #endregion
 
-    private void VisualizeSoundBars(int pitch)
+    #region Emma
+    private void VisualizeEmmasCircle(float amplitude, int pitch)
     {
-        GameObject bars = Instantiate(soundBars, transform.position, transform.rotation);
+        // TODO: refactor this to avoid duplicating code with VisualizeArrow().
+        GameObject circle = Instantiate(emmasCircle, transform.position, transform.rotation);
+        circle.transform.SetParent(GameObject.FindGameObjectWithTag("Pointer").transform, false);
+        circle.transform.position = GameObject.FindGameObjectWithTag("Pointer").transform.position;
+
+        Vector3 newSize = circle.GetComponent<Transform>().localScale;
+        newSize.y = amplitude * amplitudeScalar;
+        newSize.x = amplitude * amplitudeScalar;
+        circle.GetComponent<Transform>().localScale = newSize;
+
+        if (pitch == 0)
+        {
+            circle.GetComponent<RawImage>().color = Color.green;
+        }
+        else if (pitch == 1)
+        {
+            circle.GetComponent<RawImage>().color = Color.yellow;
+        }
+        else if (pitch >= 2)
+        {
+            circle.GetComponent<RawImage>().color = Color.red;
+        }
+    }
+    #endregion
+
+    #region Sander
+    private void VisualizeSoundBarsDog(int pitch)
+    {
+        GameObject bars = Instantiate(soundBarsDog, transform.position, transform.rotation);
         bars.transform.SetParent(GameObject.FindGameObjectWithTag("Pointer").transform, false);
         bars.transform.position = GameObject.FindGameObjectWithTag("Pointer").transform.position;
 
@@ -400,4 +449,63 @@ public class SoundDirectionIndicator : MonoBehaviour {
             }
         }
     }
+
+    private void VisualizeSoundBarsCar(int pitch)
+    {
+        GameObject bars = Instantiate(soundBarsCar, transform.position, transform.rotation);
+        bars.transform.SetParent(GameObject.FindGameObjectWithTag("Pointer").transform, false);
+        bars.transform.position = GameObject.FindGameObjectWithTag("Pointer").transform.position;
+
+        if (pitch == 0)
+        {
+            foreach (GameObject bar in bars.GetComponent<AudioPeer>().bars)
+            {
+                bar.GetComponent<Image>().color = Color.green;
+            }
+        }
+        if (pitch == 1)
+        {
+            foreach (GameObject bar in bars.GetComponent<AudioPeer>().bars)
+            {
+                bar.GetComponent<Image>().color = Color.yellow;
+            }
+        }
+        if (pitch >= 2)
+        {
+            foreach (GameObject bar in bars.GetComponent<AudioPeer>().bars)
+            {
+                bar.GetComponent<Image>().color = Color.red;
+            }
+        }
+    }
+
+    private void VisualizeSoundBarsAmbulance(int pitch)
+    {
+        GameObject bars = Instantiate(soundBarsAmbulance, transform.position, transform.rotation);
+        bars.transform.SetParent(GameObject.FindGameObjectWithTag("Pointer").transform, false);
+        bars.transform.position = GameObject.FindGameObjectWithTag("Pointer").transform.position;
+
+        if (pitch == 0)
+        {
+            foreach (GameObject bar in bars.GetComponent<AudioPeer>().bars)
+            {
+                bar.GetComponent<Image>().color = Color.green;
+            }
+        }
+        if (pitch == 1)
+        {
+            foreach (GameObject bar in bars.GetComponent<AudioPeer>().bars)
+            {
+                bar.GetComponent<Image>().color = Color.yellow;
+            }
+        }
+        if (pitch >= 2)
+        {
+            foreach (GameObject bar in bars.GetComponent<AudioPeer>().bars)
+            {
+                bar.GetComponent<Image>().color = Color.red;
+            }
+        }
+    }
+    #endregion
 }

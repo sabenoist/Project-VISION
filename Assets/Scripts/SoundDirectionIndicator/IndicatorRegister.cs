@@ -14,6 +14,21 @@ public class IndicatorRegister : MonoBehaviour
     [SerializeField]
     private float button = 1;
 
+    //adjust this to change speed
+    public float speed = 5f;
+    //adjust this to change how high it goes
+    public float height = 0.5f;
+
+    /// <summary>
+    /// Handles the floating of the arrow.
+    /// </summary>
+    private void Update()
+    {
+        Vector3 pos = transform.position;
+        float newY = Mathf.Sin(Time.time * speed) * height + pos.y;
+        transform.position = new Vector3(pos.x, newY, pos.z);
+    }
+
     void OnEnable()
     {
         //Invoke("Register", Random.Range(0, 8));

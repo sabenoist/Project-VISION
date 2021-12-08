@@ -173,3 +173,5 @@ MonoBehaviour:
   amplitude: 10
   pitch: 1
   button: 1
+  speed: 1
+  height: 0.0005
